@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--Pacientem je zena narozena nekdy v unoru 1980. Lecila se na MOU, kde byla vedena pod ID 167264        -->
+
+<patient id="167264" consent="true" year="1980" month="--02" sex="female" biobank="MOU"
+         xmlns="http://www.bbmri.cz/schemas/biobank/data">
+    <LTS>
+        <!--Poradove cislo v ramci roku   -->
+        <!-- sampleId = rok + number + typ-->
+        <tissue year="2008"
+                number="4028"
+                sampleId="200840281">
+            <!--Pocet alikvotu  -->
+            <samplesNo>4</samplesNo>
+            <!--Pocet vydatelnych alikvotu  -->
+            <availableSamplesNo>2</availableSamplesNo>
+            <!--Ciselnik - 1 znamena nador v ramci MOU-->
+            <materialType>1</materialType>
+            <!--TNM klasifikace  -->
+            <TNM>T1aN0M0</TNM>
+            <!--pTNM klasifikace  -->
+            <pTNM>T1aN0M0</pTNM>
+            <!--morfologicka klasifikace  -->
+            <morphology>0000/11</morphology>
+            <!--cas odebrani  -->
+            <cutTime>2012-05-15T08:30:00</cutTime>
+            <!--cas zamrazeni  -->
+            <freezeTime>2012-05-21T10:30:00</freezeTime>
+            <!--vzorek odebran pri operaci  -->
+            <retrieved>operational</retrieved>
+        </tissue>
+    </LTS>
+    <STS>
+        <diagnosisMaterial year="2010"
+                           number=""
+                           sampleId="20084029P">
+            <!-- P = plasma -->
+            <materialType>P</materialType>
+            <diagnosis>N26</diagnosis>
+            <takingDate>2012-04-21T10:30:00</takingDate>
+            <retrieved>unknown</retrieved>
+
+
+        </diagnosisMaterial>
+    </STS>
+</patient>

@@ -16,40 +16,16 @@ package gen
 
 import (
 	"fmt"
-	"math/rand"
-	"time"
+	"strings"
 )
 
-func Patient(r *rand.Rand, idx int) Object {
+func Patient(mou PatientMOU) Object {
 	patient := make(map[string]interface{})
 	patient["resourceType"] = "Patient"
-	patient["id"] = fmt.Sprintf("bbmri-%d", idx)
+	patient["id"] = fmt.Sprintf("bbmri-%d", mou.Id)
 	patient["meta"] = meta("https://fhir.bbmri.de/StructureDefinition/Patient")
-	patient["gender"] = randGender(r)
-
-	birthDate := randDate(r, 1950, 2000)
-	patient["birthDate"] = birthDate.Format("2006-01-02")
-
-	deceasedDate := birthDate.Add(randAge(r))
-	if deceasedDate.Before(time.Now()) {
-		patient["deceasedDateTime"] = deceasedDate.Format("2006-01-02")
-	}
+	patient["gender"] = mou.Sex
+	patient["birthDate"] = mou.BirthYear + "-" + strings.Trim(mou.BirthMonth, "-") + "-01"
 
 	return patient
-}
-
-var genders = []string{"male", "female"}
-
-func randGender(r *rand.Rand) string {
-	return genders[r.Intn(len(genders))]
-}
-
-func randDate(r *rand.Rand, startYear int, endYear int) time.Time {
-	start := time.Date(startYear, time.January, 1, 0, 0, 0, 0, time.UTC).Unix()
-	end := time.Date(endYear, time.January, 1, 0, 0, 0, 0, time.UTC).Unix()
-	return time.Unix(start+r.Int63n(end-start), 0)
-}
-
-func randAge(r *rand.Rand) time.Duration {
-	return time.Duration(r.Intn(80*365)+10*365) * 24 * time.Hour
 }

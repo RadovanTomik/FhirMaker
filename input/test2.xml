@@ -2,7 +2,7 @@
 
 <!--Pacientem je zena narozena nekdy v unoru 1980. Lecila se na MOU, kde byla vedena pod ID 167264        -->
 
-<patient id="167264" consent="true" year="1980" month="--02" sex="female" biobank="MOU"
+<patient id="16726495" consent="true" year="1980" month="--02" sex="female" biobank="MOU"
          xmlns="http://www.bbmri.cz/schemas/biobank/data">
     <LTS>
         <!--Poradove cislo v ramci roku   -->

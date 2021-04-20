@@ -15,12 +15,70 @@
 package gen
 
 import (
+	"encoding/xml"
 	"fmt"
 	"github.com/google/uuid"
-	"math"
-	"math/rand"
-	"time"
+	"io/ioutil"
+	"log"
+	"os"
 )
+
+type PatientMOU struct {
+	XMLName    xml.Name `xml:"patient"`
+	Id         int      `xml:"id,attr"`
+	Sex        string   `xml:"sex,attr"`
+	BirthYear  string   `xml:"year,attr"`
+	BirthMonth string   `xml:"month,attr"`
+	Custodian  string   `xml:"biobank,attr"`
+	LTS        LTS      `xml:"LTS"`
+	STS        STS      `xml:"STS"`
+}
+
+type LTS struct {
+	XMLName xml.Name `xml:"LTS"`
+	Tissues []Tissue `xml:"tissue"`
+}
+
+type Tissue struct {
+	XMLName      xml.Name `xml:"tissue"`
+	TissueId     string   `xml:"sampleId,attr"`
+	MaterialType string   `xml:"materialType"`
+}
+
+type STS struct {
+	XMLName xml.Name `xml:"STS"`
+	DMs      []DM     `xml:"diagnosisMaterial"`
+}
+type DM struct {
+	TissueId     string `xml:"sampleId,attr"`
+	Diagnosis    string `xml:"diagnosis"`
+	MaterialType string `xml:"materialType"`
+}
+
+func readFile(string2 string) (PatientMOU, error) {
+	xmlFile, err := os.Open("./input/" + string2)
+	if err != nil {
+		fmt.Println(err)
+	}
+
+	fmt.Println("Successfully Opened {string2}.xml")
+
+	defer func(xmlFile *os.File) {
+		err := xmlFile.Close()
+		if err != nil {
+			fmt.Println(err)
+		}
+	}(xmlFile)
+
+	byteValue, _ := ioutil.ReadAll(xmlFile)
+
+	var patient PatientMOU
+	err = xml.Unmarshal(byteValue, &patient)
+	if err != nil {
+		return patient, nil
+	}
+	return patient, err
+}
 
 func BiobankBundle() Object {
 	entries := make(Array, 0, 11)
@@ -36,27 +94,28 @@ func BiobankBundle() Object {
 	}
 }
 
-func Bundle(r *rand.Rand, start int, n int) Object {
-	entries := make(Array, 0, n)
-	for i := start; i < start+n; i++ {
+func Bundle() Object {
+	// IDK why 100 TO DO
+	entries := make(Array, 0, 100)
+	file, err := os.Open("./input")
+	if err != nil {
+		log.Fatalf("failed opening directory: %s", err)
+	}
+	defer func(file *os.File) {
+		err := file.Close()
+		if err != nil {
 
-		patient := Patient(r, i)
-		entries = append(entries, entry(patient))
-
-		encounterDate := randDate(r, 2000, 2018)
-		bmi := RandBmiValue(r)
-		bodyHeight := RandBodyHeightValue(r)
-		bodyWeight := bmi * math.Pow(bodyHeight/100, 2)
-		entries = append(entries, entry(Bmi(i, encounterDate, bmi)))
-		entries = append(entries, entry(BodyHeight(i, encounterDate, bodyHeight)))
-		entries = append(entries, entry(BodyWeight(i, encounterDate, bodyWeight)))
-		entries = appendConditions(entries, r, i, encounterDate)
-		entries = append(entries, entry(TobaccoUse(r, i, encounterDate)))
-		entries = appendSpecimens(entries, r, i, encounterDate)
-
-		if patient["deceasedDateTime"] != nil {
-			entries = append(entries, entry(CauseOfDeath(r, i)))
 		}
+	}(file)
+
+	list, _ := file.Readdirnames(0) // 0 to read all files and folders
+	for _, name := range list {
+		patientMou, _ := readFile(name)
+		patient := Patient(patientMou)
+		entries = append(entries, entry(patient))
+		entries = appendConditions(entries, patientMou.Id, patientMou.STS.DMs[0].Diagnosis)
+		entries = appendSpecimens(entries, patientMou)
+
 	}
 
 	return Object{
@@ -67,18 +126,14 @@ func Bundle(r *rand.Rand, start int, n int) Object {
 	}
 }
 
-func appendConditions(entries Array, r *rand.Rand, patientIdx int, encounterDate time.Time) Array {
-	n := int(math.Round(r.NormFloat64()*1.5 + 5))
-	for i := 0; i < n; i++ {
-		entries = append(entries, entry(Condition(r, patientIdx, i, encounterDate)))
-	}
+func appendConditions(entries Array, patientIdx int, condition string) Array {
+	entries = append(entries, entry(Condition(patientIdx, condition)))
 	return entries
 }
 
-func appendSpecimens(entries Array, r *rand.Rand, patientIdx int, encounterDate time.Time) Array {
-	n := int(math.Round(r.NormFloat64()*3 + 10))
-	for i := 0; i < n; i++ {
-		entries = append(entries, entry(Specimen(r, patientIdx, i, encounterDate)))
+func appendSpecimens(entries Array, mou PatientMOU) Array {
+	for i := 0; i < len(mou.LTS.Tissues); i++ {
+		entries = append(entries, entry(Specimen(mou, i)))
 	}
 	return entries
 }

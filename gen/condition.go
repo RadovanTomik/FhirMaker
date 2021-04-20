@@ -17,17 +17,15 @@ package gen
 import (
 	"fmt"
 	"math/rand"
-	"time"
 )
 
-func Condition(r *rand.Rand, patientIdx int, conditionIdx int, date time.Time) Object {
+func Condition(patientIdx int, condition string) Object {
 	return Object{
 		"resourceType":  "Condition",
-		"id":            fmt.Sprintf("bbmri-%d-condition-%d", patientIdx, conditionIdx),
+		"id":            fmt.Sprintf("bbmri-%d-condition-%d", patientIdx, 0),
 		"meta":          meta("https://fhir.bbmri.de/StructureDefinition/Condition"),
 		"subject":       patientReference(patientIdx),
-		"code":          codeableConcept(codingWithVersion("http://hl7.org/fhir/sid/icd-10", "2016", randIcd10Code(r))),
-		"onsetDateTime": date.Format("2006-01-02"),
+		"code":          codeableConcept(codingWithVersion("http://hl7.org/fhir/sid/icd-10", "2016", condition)),
 	}
 }
 

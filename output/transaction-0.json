@@ -1,0 +1,213 @@
+{
+  "entry": [
+    {
+      "fullUrl": "http://example.com/Patient/bbmri-16726495",
+      "request": {
+        "method": "PUT",
+        "url": "Patient/bbmri-16726495"
+      },
+      "resource": {
+        "birthDate": "1980-02-01",
+        "gender": "female",
+        "id": "bbmri-16726495",
+        "meta": {
+          "profile": [
+            "https://fhir.bbmri.de/StructureDefinition/Patient"
+          ]
+        },
+        "resourceType": "Patient"
+      }
+    },
+    {
+      "fullUrl": "http://example.com/Condition/bbmri-16726495-condition-0",
+      "request": {
+        "method": "PUT",
+        "url": "Condition/bbmri-16726495-condition-0"
+      },
+      "resource": {
+        "code": {
+          "coding": [
+            {
+              "code": "N26",
+              "system": "http://hl7.org/fhir/sid/icd-10",
+              "version": "2016"
+            }
+          ]
+        },
+        "id": "bbmri-16726495-condition-0",
+        "meta": {
+          "profile": [
+            "https://fhir.bbmri.de/StructureDefinition/Condition"
+          ]
+        },
+        "resourceType": "Condition",
+        "subject": {
+          "reference": "Patient/bbmri-16726495"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://example.com/Specimen/bbmri-16726495-specimen-0",
+      "request": {
+        "method": "PUT",
+        "url": "Specimen/bbmri-16726495-specimen-0"
+      },
+      "resource": {
+        "extension": [
+          {
+            "url": "https://fhir.bbmri.de/StructureDefinition/StorageTemperature",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "code": "temperature2to10",
+                  "system": "https://fhir.bbmri.de/CodeSystem/StorageTemperature"
+                }
+              ]
+            }
+          },
+          {
+            "url": "https://fhir.bbmri.de/StructureDefinition/SampleDiagnosis",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "code": "N26",
+                  "system": "http://hl7.org/fhir/sid/icd-10"
+                }
+              ]
+            }
+          },
+          {
+            "url": "https://fhir.bbmri.de/StructureDefinition/Custodian",
+            "valueReference": {
+              "reference": "Organization/collection-8"
+            }
+          }
+        ],
+        "id": "bbmri-16726495-specimen-0",
+        "meta": {
+          "profile": [
+            "https://fhir.bbmri.de/StructureDefinition/Specimen"
+          ]
+        },
+        "resourceType": "Specimen",
+        "subject": {
+          "reference": "Patient/bbmri-16726495"
+        },
+        "type": {
+          "coding": [
+            {
+              "code": "tissue",
+              "system": "https://fhir.bbmri.de/CodeSystem/SampleMaterialType"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "http://example.com/Patient/bbmri-167264",
+      "request": {
+        "method": "PUT",
+        "url": "Patient/bbmri-167264"
+      },
+      "resource": {
+        "birthDate": "1980-02-01",
+        "gender": "female",
+        "id": "bbmri-167264",
+        "meta": {
+          "profile": [
+            "https://fhir.bbmri.de/StructureDefinition/Patient"
+          ]
+        },
+        "resourceType": "Patient"
+      }
+    },
+    {
+      "fullUrl": "http://example.com/Condition/bbmri-167264-condition-0",
+      "request": {
+        "method": "PUT",
+        "url": "Condition/bbmri-167264-condition-0"
+      },
+      "resource": {
+        "code": {
+          "coding": [
+            {
+              "code": "N26",
+              "system": "http://hl7.org/fhir/sid/icd-10",
+              "version": "2016"
+            }
+          ]
+        },
+        "id": "bbmri-167264-condition-0",
+        "meta": {
+          "profile": [
+            "https://fhir.bbmri.de/StructureDefinition/Condition"
+          ]
+        },
+        "resourceType": "Condition",
+        "subject": {
+          "reference": "Patient/bbmri-167264"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://example.com/Specimen/bbmri-167264-specimen-0",
+      "request": {
+        "method": "PUT",
+        "url": "Specimen/bbmri-167264-specimen-0"
+      },
+      "resource": {
+        "extension": [
+          {
+            "url": "https://fhir.bbmri.de/StructureDefinition/StorageTemperature",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "code": "temperature2to10",
+                  "system": "https://fhir.bbmri.de/CodeSystem/StorageTemperature"
+                }
+              ]
+            }
+          },
+          {
+            "url": "https://fhir.bbmri.de/StructureDefinition/SampleDiagnosis",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "code": "N26",
+                  "system": "http://hl7.org/fhir/sid/icd-10"
+                }
+              ]
+            }
+          },
+          {
+            "url": "https://fhir.bbmri.de/StructureDefinition/Custodian",
+            "valueReference": {
+              "reference": "Organization/collection-8"
+            }
+          }
+        ],
+        "id": "bbmri-167264-specimen-0",
+        "meta": {
+          "profile": [
+            "https://fhir.bbmri.de/StructureDefinition/Specimen"
+          ]
+        },
+        "resourceType": "Specimen",
+        "subject": {
+          "reference": "Patient/bbmri-167264"
+        },
+        "type": {
+          "coding": [
+            {
+              "code": "tissue",
+              "system": "https://fhir.bbmri.de/CodeSystem/SampleMaterialType"
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "id": "f82c03a0-2aa6-4889-8b7b-277d3cdbc9fa",
+  "resourceType": "Bundle",
+  "type": "transaction"
+}

@@ -17,25 +17,23 @@ package gen
 import (
 	"fmt"
 	"math/rand"
-	"time"
 )
 
-func Specimen(r *rand.Rand, patientIdx int, specimenIdx int, date time.Time) Object {
+func Specimen(mou PatientMOU, specimenIdx int,) Object {
 	return Object{
 		"resourceType": "Specimen",
-		"id":           fmt.Sprintf("bbmri-%d-specimen-%d", patientIdx, specimenIdx),
+		"id":           fmt.Sprintf("bbmri-%d-specimen-%d", mou.Id, specimenIdx),
 		"meta":         meta("https://fhir.bbmri.de/StructureDefinition/Specimen"),
-		"extension":    Array{storageTemp(r), sampleDiagnosis(r), custodian(r)},
-		"type":         codeableConcept(materialTypeCoding(r)),
-		"subject":      patientReference(patientIdx),
-		"collection":   collection(r, date),
+		"extension":    Array{storageTemp(), sampleDiagnosis(mou.STS.DMs[0].Diagnosis), custodian(mou.Custodian)},
+		"type":         codeableConcept(materialTypeCoding()),
+		"subject":      patientReference(mou.Id),
 	}
 }
 
-func storageTemp(r *rand.Rand) Object {
+func storageTemp() Object {
 	coding := coding(
 		"https://fhir.bbmri.de/CodeSystem/StorageTemperature",
-		randStorageTemp(r))
+		storageTemps[0])
 
 	return bbmriExtensionCodeableConcept("StorageTemperature", codeableConcept(coding))
 }
@@ -54,25 +52,18 @@ func randStorageTemp(r *rand.Rand) string {
 	return storageTemps[r.Intn(len(storageTemps))]
 }
 
-func sampleDiagnosis(r *rand.Rand) Object {
-	coding := coding("http://hl7.org/fhir/sid/icd-10", randIcd10Code(r))
+func sampleDiagnosis(diagnosis string) Object {
+	coding := coding("http://hl7.org/fhir/sid/icd-10", diagnosis)
 
 	return bbmriExtensionCodeableConcept("SampleDiagnosis", codeableConcept(coding))
 }
 
-func custodian(r *rand.Rand) Object {
+func custodian(custodian string) Object {
 	return bbmriExtensionReference(
 		"Custodian",
-		stringReference("Organization", fmt.Sprintf("collection-%d", r.Intn(10))))
+		stringReference("Organization", fmt.Sprintf("collection-" + "8")))
 }
 
-func collection(r *rand.Rand, date time.Time) Object {
-	return Object{
-		"collectedDateTime":            date.Format("2006-01-02"),
-		"bodySite":                     codeableConcept(coding("urn:oid:2.16.840.1.113883.6.43.1", randIcdOCode(r))),
-		"fastingStatusCodeableConcept": codeableConcept(coding("http://terminology.hl7.org/CodeSystem/v2-0916", randFastingStatus(r))),
-	}
-}
 
 var fastingStatus = []string{"F", "FNA", "NF", "NG"}
 
@@ -84,9 +75,9 @@ func randIcdOCode(r *rand.Rand) string {
 	return fmt.Sprintf("C%02d.%d", r.Intn(100), r.Intn(10))
 }
 
-func materialTypeCoding(r *rand.Rand) Object {
+func materialTypeCoding() Object {
 	return coding("https://fhir.bbmri.de/CodeSystem/SampleMaterialType",
-		randMaterialType(r))
+		materialTypes[0])
 }
 
 var materialTypes = []string{

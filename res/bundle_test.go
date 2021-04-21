@@ -16,12 +16,11 @@ package res
 
 import (
 	"github.com/stretchr/testify/assert"
-	"math/rand"
 	"testing"
 )
 
 func TestBundle(t *testing.T) {
-	bundle := Bundle(rand.New(rand.NewSource(0)), 0, 1)
+	bundle := Bundle()
 	assert.Equal(t, 25, len(bundle["entry"].(Array)))
 }
 

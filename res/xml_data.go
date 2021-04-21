@@ -39,13 +39,13 @@ type DM struct {
 	MaterialType string `xml:"materialType"`
 }
 
-func readFile(string2 string) (PatientMOU, error) {
-	xmlFile, err := os.Open("./input/" + string2)
+func readFile(inputDir string, fileName string) (PatientMOU, error) {
+	xmlFile, err := os.Open(inputDir + "/"+ fileName)
 	if err != nil {
 		fmt.Println(err)
 	}
 
-	fmt.Printf("Successfully Opened %s.xml\n", string2)
+	fmt.Printf("Successfully Opened %s.xml\n", fileName)
 
 	defer func(xmlFile *os.File) {
 		err := xmlFile.Close()

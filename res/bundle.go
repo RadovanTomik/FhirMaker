@@ -35,10 +35,10 @@ func BiobankBundle() Object {
 	}
 }
 
-func Bundle() Object {
+func Bundle(dir string) Object {
 	// IDK why 100 TO DO
 	entries := make(Array, 0, 100)
-	file, err := os.Open("./input")
+	file, err := os.Open("./" + dir)
 	if err != nil {
 		log.Fatalf("failed opening directory: %s", err)
 	}
@@ -51,7 +51,7 @@ func Bundle() Object {
 
 	list, _ := file.Readdirnames(0) // 0 to read all files and folders
 	for _, name := range list {
-		patientMou, _ := readFile(name)
+		patientMou, _ := readFile(dir, name)
 		patient := Patient(patientMou)
 		entries = append(entries, entry(patient))
 		entries = appendConditions(entries, patientMou.Id, patientMou.STS.DMs[0].Diagnosis)

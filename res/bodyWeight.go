@@ -12,20 +12,24 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package gen
+package res
 
 import (
 	"fmt"
-	"strings"
+	"math"
+	"time"
 )
 
-func Patient(mou PatientMOU) Object {
-	patient := make(map[string]interface{})
-	patient["resourceType"] = "Patient"
-	patient["id"] = fmt.Sprintf("bbmri-%d", mou.Id)
-	patient["meta"] = meta("https://fhir.bbmri.de/StructureDefinition/Patient")
-	patient["gender"] = mou.Sex
-	patient["birthDate"] = mou.BirthYear + "-" + strings.Trim(mou.BirthMonth, "-") + "-01"
-
-	return patient
+func BodyWeight(patientIdx int, date time.Time, value float64) Object {
+	return Object{
+		"resourceType":      "Observation",
+		"id":                fmt.Sprintf("bbmri-%d-body-weight", patientIdx),
+		"meta":              meta("https://fhir.bbmri.de/StructureDefinition/BodyWeight"),
+		"status":            "final",
+		"category":          Array{vitalSigns},
+		"subject":           patientReference(patientIdx),
+		"code":              codeableConcept(coding("http://loinc.org", "29463-7")),
+		"effectiveDateTime": date.Format("2006-01-02"),
+		"valueQuantity":     quantity(math.Round(value), "kg"),
+	}
 }

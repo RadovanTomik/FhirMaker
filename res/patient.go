@@ -12,21 +12,20 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package gen
+package res
 
 import (
 	"fmt"
-	"math/rand"
+	"strings"
 )
 
-func CauseOfDeath(r *rand.Rand, patientIdx int) Object {
-	return Object{
-		"resourceType":         "Observation",
-		"id":                   fmt.Sprintf("bbmri-%d-cause-of-death", patientIdx),
-		"meta":                 meta("https://fhir.bbmri.de/StructureDefinition/CauseOfDeath"),
-		"status":               "final",
-		"code":                 codeableConcept(coding("http://loinc.org", "68343-3")),
-		"subject":              patientReference(patientIdx),
-		"valueCodeableConcept": codeableConcept(coding("http://hl7.org/fhir/sid/icd-10", randIcd10Code(r))),
-	}
+func Patient(mou PatientMOU) Object {
+	patient := make(map[string]interface{})
+	patient["resourceType"] = "Patient"
+	patient["id"] = fmt.Sprintf("bbmri-%d", mou.Id)
+	patient["meta"] = meta("https://fhir.bbmri.de/StructureDefinition/Patient")
+	patient["gender"] = mou.Sex
+	patient["birthDate"] = mou.BirthYear + "-" + strings.Trim(mou.BirthMonth, "-") + "-01"
+
+	return patient
 }

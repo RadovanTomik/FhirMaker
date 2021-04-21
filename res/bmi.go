@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package gen
+package res
 
 import (
 	"fmt"
@@ -21,20 +21,20 @@ import (
 	"time"
 )
 
-func BodyHeight(patientIdx int, date time.Time, value float64) Object {
+func Bmi(patientIdx int, date time.Time, value float64) Object {
 	return Object{
 		"resourceType":      "Observation",
-		"id":                fmt.Sprintf("bbmri-%d-body-height", patientIdx),
-		"meta":              meta("https://fhir.bbmri.de/StructureDefinition/BodyHeight"),
+		"id":                fmt.Sprintf("%d-bmi", patientIdx),
+		"meta":              meta("https://fhir.bbmri.de/StructureDefinition/Bmi"),
 		"status":            "final",
 		"category":          Array{vitalSigns},
 		"subject":           patientReference(patientIdx),
-		"code":              codeableConcept(coding("http://loinc.org", "8302-2")),
+		"code":              codeableConcept(coding("http://loinc.org", "39156-5")),
 		"effectiveDateTime": date.Format("2006-01-02"),
-		"valueQuantity":     quantity(math.Round(value), "cm"),
+		"valueQuantity":     quantity(math.Round(value*10)/10, "kg/m2"),
 	}
 }
 
-func RandBodyHeightValue(r *rand.Rand) float64 {
-	return r.NormFloat64()*30.8 + 171
+func RandBmiValue(r *rand.Rand) float64 {
+	return r.NormFloat64()*4.89 + 27.3
 }

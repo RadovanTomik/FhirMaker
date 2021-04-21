@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package gen
+package res
 
 func meta(profileUrl string) Object {
 	return Object{"profile": Array{profileUrl}}

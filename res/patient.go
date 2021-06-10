@@ -16,16 +16,14 @@ package res
 
 import (
 	"fmt"
-	"strings"
 )
 
-func Patient(mou PatientMOU) Object {
+func Patient(cohortPatient CohortPatient) Object {
 	patient := make(map[string]interface{})
 	patient["resourceType"] = "Patient"
-	patient["id"] = fmt.Sprintf("bbmri-%d", mou.Id)
+	patient["id"] = fmt.Sprintf(cohortPatient.PatientId)
 	patient["meta"] = meta("https://fhir.bbmri.de/StructureDefinition/Patient")
-	patient["gender"] = mou.Sex
-	patient["birthDate"] = mou.BirthYear + "-" + strings.Trim(mou.BirthMonth, "-") + "-01"
+	patient["gender"] = cohortPatient.Locations.Locations[0].BasicData.Form.Gender
 
 	return patient
 }

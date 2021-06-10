@@ -19,13 +19,14 @@ import (
 	"math/rand"
 )
 
-func Condition(patientIdx int, condition string) Object {
+func Condition(patientIdx string, condition string, date string) Object {
 	return Object{
 		"resourceType":  "Condition",
-		"id":            fmt.Sprintf("bbmri-%d-condition-%d", patientIdx, 0),
+		"id":            fmt.Sprintf("%s-condition-%d", patientIdx, 0),
 		"meta":          meta("https://fhir.bbmri.de/StructureDefinition/Condition"),
 		"subject":       patientReference(patientIdx),
 		"code":          codeableConcept(codingWithVersion("http://hl7.org/fhir/sid/icd-10", "2016", condition)),
+		"onsetDateTime": date,
 	}
 }
 

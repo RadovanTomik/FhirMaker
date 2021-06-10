@@ -19,6 +19,7 @@ import (
 	"github.com/google/uuid"
 	"log"
 	"os"
+	"strings"
 )
 
 func BiobankBundle() Object {
@@ -51,12 +52,22 @@ func Bundle(dir string) Object {
 
 	list, _ := file.Readdirnames(0) // 0 to read all files and folders
 	for _, name := range list {
-		patientMou, _ := readFile(dir, name)
-		patient := Patient(patientMou)
-		entries = append(entries, entry(patient))
-		entries = appendConditions(entries, patientMou.Id, patientMou.STS.DMs[0].Diagnosis)
-		entries = appendSpecimens(entries, patientMou)
+		bhImport, _ := readFile(dir, name)
+		for _, CP := range bhImport.Patients {
+			patient := Patient(CP)
+			entries = append(entries, entry(patient))
+			for k := 0; k < len(CP.Locations.Locations[0].Events.Events); k++ {
+				var name = CP.Locations.Locations[0].Events.Events[k].Type
+				switch name {
+				case "Sample":
+					entries = appendSpecimens(entries, CP, CP.Locations.Locations[0].Events.Events[k])
+				case "Histopathology":
+					entries = appendConditions(entries, CP.PatientId, CP.Locations.Locations[0].Events.Events[k].LG.Form2.Diagnosis,
+						CP.Locations.Locations[0].BasicData.Form.DiagnosisDate)
+				}
+			}
 
+		}
 	}
 
 	return Object{
@@ -67,15 +78,13 @@ func Bundle(dir string) Object {
 	}
 }
 
-func appendConditions(entries Array, patientIdx int, condition string) Array {
-	entries = append(entries, entry(Condition(patientIdx, condition)))
+func appendConditions(entries Array, patientIdx string, condition string, date string) Array {
+	entries = append(entries, entry(Condition(patientIdx, condition[strings.LastIndex(condition, " ")+1:], date)))
 	return entries
 }
 
-func appendSpecimens(entries Array, mou PatientMOU) Array {
-	for i := 0; i < len(mou.LTS.Tissues); i++ {
-		entries = append(entries, entry(Specimen(mou, i)))
-	}
+func appendSpecimens(entries Array, CP CohortPatient, sample Event) Array {
+	entries = append(entries, entry(Specimen(CP, sample)))
 	return entries
 }
 

@@ -17,16 +17,27 @@ package res
 import (
 	"fmt"
 	"math/rand"
+	"strings"
 )
 
-func Specimen(mou PatientMOU, specimenIdx int,) Object {
+func Specimen(CP CohortPatient, sample Event) Object {
+	var diagnosis string
+	for k := 0; k < len(CP.Locations.Locations[0].Events.Events); k++ {
+		var name = CP.Locations.Locations[0].Events.Events[k].Type
+		if name == "Histopathology" {
+			diagnosis = CP.Locations.Locations[0].Events.Events[k].LG.Form2.Diagnosis
+		}
+	}
+	var date = strings.ReplaceAll(sample.Date, "/", "-")
+	words := strings.Split(date, "-")
 	return Object{
 		"resourceType": "Specimen",
-		"id":           fmt.Sprintf("bbmri-%d-specimen-%d", mou.Id, specimenIdx),
+		"id":           fmt.Sprintf("%s-specimen-%s", CP.PatientId, sample.LG.Form1.SampleId),
 		"meta":         meta("https://fhir.bbmri.de/StructureDefinition/Specimen"),
-		"extension":    Array{storageTemp(), sampleDiagnosis(mou.STS.DMs[0].Diagnosis), custodian(mou.Custodian)},
+		"extension":    Array{storageTemp(), sampleDiagnosis(diagnosis), custodian()},
 		"type":         codeableConcept(materialTypeCoding()),
-		"subject":      patientReference(mou.Id),
+		"subject":      patientReference(CP.PatientId),
+		"collection":   collection(words[2] + "-" + words[1] + "-" + words[0]),
 	}
 }
 
@@ -52,18 +63,23 @@ func randStorageTemp(r *rand.Rand) string {
 	return storageTemps[r.Intn(len(storageTemps))]
 }
 
+func collection(date string) Object {
+	return Object{
+		"collectedDateTime": date,
+	}
+}
+
 func sampleDiagnosis(diagnosis string) Object {
-	coding := coding("http://hl7.org/fhir/sid/icd-10", diagnosis)
+	coding := coding("http://hl7.org/fhir/sid/icd-10", diagnosis[strings.LastIndex(diagnosis, " ")+1:])
 
 	return bbmriExtensionCodeableConcept("SampleDiagnosis", codeableConcept(coding))
 }
 
-func custodian(custodian string) Object {
+func custodian() Object {
 	return bbmriExtensionReference(
 		"Custodian",
-		stringReference("Organization", fmt.Sprintf("collection-" + "8")))
+		stringReference("Organization", fmt.Sprintf("collection-"+"0")))
 }
-
 
 var fastingStatus = []string{"F", "FNA", "NF", "NG"}
 
@@ -77,7 +93,7 @@ func randIcdOCode(r *rand.Rand) string {
 
 func materialTypeCoding() Object {
 	return coding("https://fhir.bbmri.de/CodeSystem/SampleMaterialType",
-		materialTypes[0])
+		materialTypes[1])
 }
 
 var materialTypes = []string{

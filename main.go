@@ -1,6 +1,6 @@
 package main
 
-import "github.com/samply/bbmri-fhir-gen/cmd"
+import "github.com/RadovanTomik/FhirMaker/cmd"
 
 func main() {
 	cmd.Execute()

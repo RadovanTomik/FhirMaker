@@ -1,0 +1,450 @@
+<BHImport xmlns="http://registry.samply.de/schemata/import_v1">
+    <Mdr>
+        <URL>https://mdr.osse-register.de/v3/api/mdr</URL>
+        <Namespace>urn:ccdg</Namespace>
+    </Mdr>
+    <BHPatient>
+        <Identifier encrypted="false">DKFZ-I001</Identifier>
+        <Locations>
+            <Location name="Deutsches Krebsforschungszentrum">
+                <BasicData>
+                    <Form name="form_28_ver-27">
+                        <Dataelement_2_2 name="Participation in clinical study">true</Dataelement_2_2>
+                        <Dataelement_22_4 name="KRAS exon 4 (codons 117 or 146) mutation status">Mutated
+                        </Dataelement_22_4>
+                        <Dataelement_4_3 name="Time of recurrence (metastasis diagnosis)">4</Dataelement_4_3>
+                        <Dataelement_20_3 name="KRAS exon 2 (codons 12 or 13)">Mutated</Dataelement_20_3>
+                        <Dataelement_6_3 name="Timestamp of last update of vital status">2016-10-05</Dataelement_6_3>
+                        <Dataelement_87_1 name="BRAF, PIC3CA, HER2 mutation status">BRAF, PIC3CA, HER2 mutation status -
+                            not mutated
+                        </Dataelement_87_1>
+                        <Dataelement_24_4 name="NRAS exon 3 (codons 59 or 61)">Not done</Dataelement_24_4>
+                        <Dataelement_61_5 name="Liver imaging">Liver imaging - Done, data available</Dataelement_61_5>
+                        <Dataelement_31_3 name="CT">CT - Done, data available</Dataelement_31_3>
+                        <Dataelement_14_3 name="Microsatellite instability">YES</Dataelement_14_3>
+                        <Dataelement_16_3 name="Risk situation (only HNPCC)">true</Dataelement_16_3>
+                        <Dataelement_85_1 name="Biological sex">male</Dataelement_85_1>
+                        <Dataelement_3_1 name="Age at diagnosis (rounded to years)">30</Dataelement_3_1>
+                        <Dataelement_21_5 name="KRAS exon 3 (codons 59 or 61)">Not mutated</Dataelement_21_5>
+                        <Dataelement_5_2 name="Vital status">DEATH_COLON_CANCER</Dataelement_5_2>
+                        <Dataelement_7_2 name="Overall survival status">2</Dataelement_7_2>
+                        <Dataelement_25_3 name="NRAS exon 4 (codons 117 or 146)">Not done</Dataelement_25_3>
+                        <Dataelement_88_1 name="Colonoscopy">Colonoscopy diagnostic exam - Negative</Dataelement_88_1>
+                        <Dataelement_23_5 name="NRAS exon 2 (codons 12 or 13)">Not mutated</Dataelement_23_5>
+                        <Dataelement_63_4 name="Lung imaging">Lung imaging - Done, data available</Dataelement_63_4>
+                        <Dataelement_30_3 name="MRI">MRI - Not done</Dataelement_30_3>
+                        <Dataelement_51_3 name="Date of diagnosis">2010-09-12</Dataelement_51_3>
+                        <Dataelement_15_2 name="Mismatch repair gene expression">LOSS_OF_EXPRESSION</Dataelement_15_2>
+                    </Form>
+                </BasicData>
+                <Events>
+
+
+                    <Event name="10/12/2008" eventtype="Pharmacotherapy">
+                        <LogitudinalData>
+                            <Form3 name="form_33_ver-10">
+                                <Dataelement_10_2 name="Date of start of pharamacotherapy">2</Dataelement_10_2>
+                                <Dataelement_11_2 name="Date of end of pharamcotherapy">6</Dataelement_11_2>
+                                <Dataelement_59_5 name="Scheme of pharmacotherapy">Other</Dataelement_59_5>
+                                <Dataelement_81_3 name="Other pharmacotherapy scheme">5-FU 1500 mg/m2 i.v. continuous
+                                    infusion, day 1-3, weeks 1 and 5
+                                </Dataelement_81_3>
+                            </Form3>
+                        </LogitudinalData>
+                    </Event>
+
+
+                    <Event name="06/12/2008" eventtype="Response to therapy">
+                        <LogitudinalData>
+                            <Form4 name="form_31_ver-2">
+                                <Dataelement_33_1 name="Specific response">Specific response - Complete response
+                                </Dataelement_33_1>
+                                <Dataelement_34_1 name="Date response was obtained in weeks since initial diagnosis">6
+                                </Dataelement_34_1>
+                            </Form4>
+                        </LogitudinalData>
+                    </Event>
+
+
+                    <Event name="06/03/2009" eventtype="Surgery">
+                        <LogitudinalData>
+                            <Form name="form_32_ver-8">
+                                <Dataelement_8_3 name="Time difference between initial diagnosis and surgery">3
+                                </Dataelement_8_3>
+                                <Dataelement_49_1 name="Surgery type">Sigmoid colectomy</Dataelement_49_1>
+                                <Dataelement_67_1 name="Other surgery type">Abdomino-perineal resection
+                                </Dataelement_67_1>
+                                <Dataelement_9_2 name="Surgery radicality">R1</Dataelement_9_2>
+                                <Dataelement_93_1 name="Location of the tumor">Location of tumor - C18.7
+                                </Dataelement_93_1>
+                            </Form>
+                        </LogitudinalData>
+                    </Event>
+
+
+                    <Event name="06/03/2009" eventtype="Sample">
+                        <LogitudinalData>
+                            <Form1 name="form_35_ver-6">
+                                <Dataelement_56_2 name="Sample ID">SKJ2398</Dataelement_56_2>
+                                <Dataelement_54_2 name="Material type">Tumor</Dataelement_54_2>
+                                <Dataelement_55_2 name="Preservation mode">FFPE</Dataelement_55_2>
+                                <Dataelement_89_3 name="Year of sample collection">2009</Dataelement_89_3>
+                            </Form1>
+                        </LogitudinalData>
+                    </Event>
+
+
+                    <Event name="25/03/2009" eventtype="Histopathology">
+                        <LogitudinalData>
+                            <Form2 name="form_34_ver-22">
+                                <Dataelement_75_1 name="Distant metastasis">Distant metastasis - M1</Dataelement_75_1>
+                                <Dataelement_83_1 name="Grade">WHO Grading - Grade - G3</Dataelement_83_1>
+                                <Dataelement_70_2 name="Stage">Stage - IIIA</Dataelement_70_2>
+                                <Dataelement_92_1 name="Localization of primary tumor">Localization of primary tumor -
+                                    C18.7
+                                </Dataelement_92_1>
+                                <Dataelement_73_3 name="UICC version">6th edition</Dataelement_73_3>
+                                <Dataelement_58_2 name="Availability invasion front digital imaging">Readily available
+                                </Dataelement_58_2>
+                                <Dataelement_71_1 name="Primary Tumor">Primary Tumor - T2</Dataelement_71_1>
+                                <Dataelement_77_1 name="Regional lymph nodes">Regional lymph nodes - N0
+                                </Dataelement_77_1>
+                                <Dataelement_68_2 name="Localization of metastasis">
+                                    <Value>Localization of metastasis - Lymph nodes</Value>
+                                    <Value>Localization of metastasis - Pulmonary</Value>
+                                </Dataelement_68_2>
+                                <Dataelement_91_1 name="Morphology">High-grade neuroendocrine carcinoma
+                                </Dataelement_91_1>
+                                <Dataelement_53_3 name="WHO version">4th edition</Dataelement_53_3>
+                                <Dataelement_57_3 name="Availability digital imaging">Can be generated
+                                </Dataelement_57_3>
+                                <Dataelement_82_1 name="Biological material from recurrence available">true
+                                </Dataelement_82_1>
+                            </Form2>
+                        </LogitudinalData>
+                    </Event>
+
+
+                    <Event name="06/04/2009" eventtype="Radiation therapy">
+                        <LogitudinalData>
+                            <Form5 name="form_29_ver-5">
+                                <Dataelement_12_4 name="Date of start of radiation therapy">3</Dataelement_12_4>
+                                <Dataelement_13_2 name="Date of end of radiation therapy">6</Dataelement_13_2>
+                            </Form5>
+                        </LogitudinalData>
+                    </Event>
+
+
+                    <!--<Event name="06/03/2009" eventtype="Targeted therapy">
+            <LogitudinalData>	  
+              <Form1 name="form_238_ver-2">
+                <Dataelement_35_3 name="Date of start of targeted therapy">1</Dataelement_35_3>
+                <Dataelement_36_1 name="Date of end of targeted therapy">6</Dataelement_36_1>
+              </Form1>
+			  </LogitudinalData>
+		  </Event >   -->
+
+
+                </Events>
+            </Location>
+        </Locations>
+    </BHPatient>
+    <BHPatient>
+        <Identifier encrypted="false">DKFZ-I002</Identifier>
+        <Locations>
+            <Location name="Deutsches Krebsforschungszentrum">
+                <BasicData>
+                    <Form name="form_28_ver-27">
+                        <Dataelement_2_2 name="Participation in clinical study">false</Dataelement_2_2>
+                        <Dataelement_22_4 name="KRAS exon 4 (codons 117 or 146) mutation status">Not done
+                        </Dataelement_22_4>
+                        <Dataelement_4_3 name="Time of recurrence (metastasis diagnosis)">8</Dataelement_4_3>
+                        <Dataelement_20_3 name="KRAS exon 2 (codons 12 or 13)">Mutated</Dataelement_20_3>
+                        <Dataelement_6_3 name="Timestamp of last update of vital status">2012-06-06</Dataelement_6_3>
+                        <Dataelement_87_1 name="BRAF, PIC3CA, HER2 mutation status">BRAF, PIC3CA, HER2 mutation status -
+                            not mutated
+                        </Dataelement_87_1>
+                        <Dataelement_24_4 name="NRAS exon 3 (codons 59 or 61)">Not mutated</Dataelement_24_4>
+                        <Dataelement_61_5 name="Liver imaging">Liver imaging - Unknown Not done</Dataelement_61_5>
+                        <Dataelement_31_3 name="CT">CT - Unknown</Dataelement_31_3>
+                        <Dataelement_14_3 name="Microsatellite instability">NO</Dataelement_14_3>
+                        <Dataelement_16_3 name="Risk situation (only HNPCC)">true</Dataelement_16_3>
+                        <Dataelement_85_1 name="Biological sex">male</Dataelement_85_1>
+                        <Dataelement_3_1 name="Age at diagnosis (rounded to years)">22</Dataelement_3_1>
+                        <Dataelement_21_5 name="KRAS exon 3 (codons 59 or 61)">Mutated</Dataelement_21_5>
+                        <Dataelement_5_2 name="Vital status">DEATH_UNKNOWN_REASON</Dataelement_5_2>
+                        <Dataelement_7_2 name="Overall survival status">3</Dataelement_7_2>
+                        <Dataelement_25_3 name="NRAS exon 4 (codons 117 or 146)">Not mutated</Dataelement_25_3>
+                        <Dataelement_88_1 name="Colonoscopy">Colonoscopy diagnostic exam- Not done</Dataelement_88_1>
+                        <Dataelement_23_5 name="NRAS exon 2 (codons 12 or 13)">Not done</Dataelement_23_5>
+                        <Dataelement_63_4 name="Lung imaging">Lung imaging - Unknown</Dataelement_63_4>
+                        <Dataelement_30_3 name="MRI">MRI - Done, data not available</Dataelement_30_3>
+                        <Dataelement_51_3 name="Date of diagnosis">2005-05-12</Dataelement_51_3>
+                        <Dataelement_15_2 name="Mismatch repair gene expression">EXPRESSION</Dataelement_15_2>
+                    </Form>
+                </BasicData>
+                <Events>
+
+
+                    <Event name="08/05/2012" eventtype="Pharmacotherapy">
+                        <LogitudinalData>
+                            <Form3 name="form_33_ver-10">
+                                <Dataelement_10_2 name="Date of start of pharamacotherapy">3</Dataelement_10_2>
+                                <Dataelement_11_2 name="Date of end of pharamcotherapy">6</Dataelement_11_2>
+                                <Dataelement_59_5 name="Scheme of pharmacotherapy">Scheme of pharmacotherapy -
+                                    Capecitabine 800-825 mg/m2 bid po, day 1-5, together with radiation or continuously
+                                    untill end of radiation
+                                </Dataelement_59_5>
+                            </Form3>
+                        </LogitudinalData>
+                    </Event>
+
+
+                    <Event name="05/05/2012" eventtype="Response to therapy">
+                        <LogitudinalData>
+                            <Form4 name="form_31_ver-2">
+                                <Dataelement_33_1 name="Specific response">Specific response - Progressive disease
+                                </Dataelement_33_1>
+                                <Dataelement_34_1 name="Date response was obtained in weeks since initial diagnosis">5
+                                </Dataelement_34_1>
+                            </Form4>
+                        </LogitudinalData>
+                    </Event>
+
+
+                    <Event name="01/06/2012" eventtype="Surgery">
+                        <LogitudinalData>
+                            <Form name="form_32_ver-8">
+                                <Dataelement_8_3 name="Time difference between initial diagnosis and surgery">5
+                                </Dataelement_8_3>
+                                <Dataelement_49_1 name="Surgery type">Transverse colectomy</Dataelement_49_1>
+                                <Dataelement_67_1 name="Other surgery type">Total colectomy</Dataelement_67_1>
+                                <Dataelement_9_2 name="Surgery radicality">R2</Dataelement_9_2>
+                                <Dataelement_93_1 name="Location of the tumor">Location of tumor - C18.5
+                                </Dataelement_93_1>
+                            </Form>
+                        </LogitudinalData>
+                    </Event>
+
+                    <Event name="01/09/2008" eventtype="Surgery">
+                        <LogitudinalData>
+                            <Form name="form_32_ver-8">
+                                <Dataelement_8_3 name="Time difference between initial diagnosis and surgery">2
+                                </Dataelement_8_3>
+                                <Dataelement_49_1 name="Surgery type">Left hemicolectomy</Dataelement_49_1>
+                                <Dataelement_67_1 name="Other surgery type">Other</Dataelement_67_1>
+                                <Dataelement_9_2 name="Surgery radicality">R1</Dataelement_9_2>
+                                <Dataelement_93_1 name="Location of the tumor">Location of tumor - C18.2
+                                </Dataelement_93_1>
+                            </Form>
+                        </LogitudinalData>
+                    </Event>
+
+
+                    <Event name="01/06/2012" eventtype="Sample">
+                        <LogitudinalData>
+                            <Form1 name="form_35_ver-6">
+                                <Dataelement_56_2 name="Sample ID">AB23091</Dataelement_56_2>
+                                <Dataelement_54_2 name="Material type">Healthy colon tissue</Dataelement_54_2>
+                                <Dataelement_55_2 name="Preservation mode">Other</Dataelement_55_2>
+                                <Dataelement_89_3 name="Year of sample collection">2012</Dataelement_89_3>
+                            </Form1>
+                        </LogitudinalData>
+                    </Event>
+
+
+                    <Event name="14/06/2012" eventtype="Histopathology">
+                        <LogitudinalData>
+                            <Form2 name="form_34_ver-22">
+                                <Dataelement_75_1 name="Distant metastasis">Distant metastasis - M1b</Dataelement_75_1>
+                                <Dataelement_83_1 name="Grade">WHO Grading - Grade - G1</Dataelement_83_1>
+                                <Dataelement_70_2 name="Stage">Stage - I</Dataelement_70_2>
+                                <Dataelement_92_1 name="Localization of primary tumor">Localization of primary tumor -
+                                    C18.1
+                                </Dataelement_92_1>
+                                <Dataelement_73_3 name="UICC version">5th edition</Dataelement_73_3>
+                                <Dataelement_58_2 name="Availability invasion front digital imaging">Invasion front not
+                                    included
+                                </Dataelement_58_2>
+                                <Dataelement_71_1 name="Primary Tumor">Primary Tumor - Tis</Dataelement_71_1>
+                                <Dataelement_77_1 name="Regional lymph nodes">Regional lymph nodes - N2a
+                                </Dataelement_77_1>
+                                <Dataelement_68_2 name="Localization of metastasis">
+                                    <Value>Localization of metastasis - Brain</Value>
+                                </Dataelement_68_2>
+                                <Dataelement_91_1 name="Morphology">Adenocarcinoma</Dataelement_91_1>
+                                <Dataelement_53_3 name="WHO version">2nd edition</Dataelement_53_3>
+                                <Dataelement_57_3 name="Availability digital imaging">No</Dataelement_57_3>
+                                <Dataelement_82_1 name="Biological material from recurrence available">false
+                                </Dataelement_82_1>
+                            </Form2>
+                        </LogitudinalData>
+                    </Event>
+
+
+                    <!--<Event name="06/03/2009" eventtype="Radiation therapy">
+            <LogitudinalData>	  
+              <Form5 name="form_29_ver-5">
+                <Dataelement_12_4 name="Date of start of radiation therapy">4</Dataelement_12_4>
+                <Dataelement_13_2 name="Date of end of radiation therapy">10</Dataelement_13_2>
+              </Form5>
+		</LogitudinalData>
+		  </Event >	-->
+
+
+                    <!--<Event name="06/03/2009" eventtype="Targeted therapy">
+            <LogitudinalData>	  
+              <Form6 name="form_30_ver-3">
+                <Dataelement_35_3 name="Date of start of targeted therapy">2</Dataelement_35_3>
+                <Dataelement_36_1 name="Date of end of targeted therapy">9</Dataelement_36_1>
+              </Form6>
+		</LogitudinalData>
+		  </Event >		-->
+
+
+                </Events>
+            </Location>
+        </Locations>
+    </BHPatient>
+    <BHPatient>
+        <Identifier encrypted="false">DKFZ-I003</Identifier>
+        <Locations>
+            <Location name="Deutsches Krebsforschungszentrum">
+                <BasicData>
+                    <Form name="form_28_ver-27">
+                        <Dataelement_2_2 name="Participation in clinical study">true</Dataelement_2_2>
+                        <Dataelement_22_4 name="KRAS exon 4 (codons 117 or 146) mutation status">Not mutated
+                        </Dataelement_22_4>
+                        <Dataelement_4_3 name="Time of recurrence (metastasis diagnosis)">6</Dataelement_4_3>
+                        <Dataelement_20_3 name="KRAS exon 2 (codons 12 or 13)">Not done</Dataelement_20_3>
+                        <Dataelement_6_3 name="Timestamp of last update of vital status">2008-02-14</Dataelement_6_3>
+                        <Dataelement_87_1 name="BRAF, PIC3CA, HER2 mutation status">BRAF, PIC3CA, HER2 mutation status -
+                            not done
+                        </Dataelement_87_1>
+                        <Dataelement_24_4 name="NRAS exon 3 (codons 59 or 61)">Mutated</Dataelement_24_4>
+                        <Dataelement_61_5 name="Liver imaging">Liver imaging - Unknown</Dataelement_61_5>
+                        <Dataelement_31_3 name="CT">CT - Done, data not available</Dataelement_31_3>
+                        <Dataelement_14_3 name="Microsatellite instability">NOT_DONE</Dataelement_14_3>
+                        <Dataelement_16_3 name="Risk situation (only HNPCC)">false</Dataelement_16_3>
+                        <Dataelement_85_1 name="Biological sex">female</Dataelement_85_1>
+                        <Dataelement_3_1 name="Age at diagnosis (rounded to years)">36</Dataelement_3_1>
+                        <Dataelement_21_5 name="KRAS exon 3 (codons 59 or 61)">Not done</Dataelement_21_5>
+                        <Dataelement_5_2 name="Vital status">DEATH_OTHER</Dataelement_5_2>
+                        <Dataelement_7_2 name="Overall survival status">4</Dataelement_7_2>
+                        <Dataelement_25_3 name="NRAS exon 4 (codons 117 or 146)">Mutated</Dataelement_25_3>
+                        <Dataelement_88_1 name="Colonoscopy">Colonoscopy diagnostic exam - Positive</Dataelement_88_1>
+                        <Dataelement_23_5 name="NRAS exon 2 (codons 12 or 13)">Mutated</Dataelement_23_5>
+                        <Dataelement_63_4 name="Lung imaging">Lung imaging - Not done</Dataelement_63_4>
+                        <Dataelement_30_3 name="MRI">MRI - Done, data available</Dataelement_30_3>
+                        <Dataelement_51_3 name="Date of diagnosis">2007-09-11</Dataelement_51_3>
+                        <Dataelement_15_2 name="Mismatch repair gene expression">NOT_DONE</Dataelement_15_2>
+                    </Form>
+                </BasicData>
+                <Events>
+
+
+                    <Event name="06/04/2015" eventtype="Pharmacotherapy">
+                        <LogitudinalData>
+                            <Form3 name="form_33_ver-10">
+                                <Dataelement_10_2 name="Date of start of pharamacotherapy">1</Dataelement_10_2>
+                                <Dataelement_11_2 name="Date of end of pharamcotherapy">8</Dataelement_11_2>
+                                <Dataelement_59_5 name="Scheme of pharmacotherapy">Scheme of pharmacotherapy - UFT
+                                    (300-340mg/m2/day) and LV (22.5-90 mg/day) po continuously, 5(-7) days per week,
+                                    together with radiotherapy
+                                </Dataelement_59_5>
+                            </Form3>
+                        </LogitudinalData>
+                    </Event>
+
+
+                    <Event name="01/04/2015" eventtype="Response to therapy">
+                        <LogitudinalData>
+                            <Form4 name="form_31_ver-2">
+                                <Dataelement_33_1 name="Specific response">Specific response - Partial response
+                                </Dataelement_33_1>
+                                <Dataelement_34_1 name="Date response was obtained in weeks since initial diagnosis">2
+                                </Dataelement_34_1>
+                            </Form4>
+                        </LogitudinalData>
+                    </Event>
+
+
+                    <!--	<Event name="06/03/2009" eventtype="Surgery">
+            <LogitudinalData>  
+              <Form name="form_32_ver-8">
+                <Dataelement_8_3 name="Time difference between initial diagnosis and surgery">1</Dataelement_8_3>
+                <Dataelement_49_1 name="Surgery type">Left hemicolectomy</Dataelement_49_1>
+                <Dataelement_67_1 name="Other surgery type">Anterior resection of rectum</Dataelement_67_1>
+                <Dataelement_9_2 name="Surgery radicality">RX</Dataelement_9_2>
+                <Dataelement_93_1 name="Location of the tumor">Location of  tumor - C18.2</Dataelement_93_1>
+              </Form>
+			  </LogitudinalData>
+		  </Event >		-->
+
+
+                    <Event name="06/04/2015" eventtype="Sample">
+                        <LogitudinalData>
+                            <Form1 name="form_35_ver-6">
+                                <Dataelement_56_2 name="Sample ID">aan2918</Dataelement_56_2>
+                                <Dataelement_54_2 name="Material type">Other</Dataelement_54_2>
+                                <Dataelement_55_2 name="Preservation mode">Cryopreservation</Dataelement_55_2>
+                                <Dataelement_89_3 name="Year of sample collection">2015</Dataelement_89_3>
+                            </Form1>
+                        </LogitudinalData>
+                    </Event>
+
+
+                    <Event name="19/04/2015" eventtype="Histopathology">
+                        <LogitudinalData>
+                            <Form2 name="form_34_ver-22">
+                                <Dataelement_75_1 name="Distant metastasis">Distant metastasis - M0</Dataelement_75_1>
+                                <Dataelement_83_1 name="Grade">WHO Grading - Grade - G1</Dataelement_83_1>
+                                <Dataelement_70_2 name="Stage">Stage - 0</Dataelement_70_2>
+                                <Dataelement_92_1 name="Localization of primary tumor">Localization of primary tumor -
+                                    C20
+                                </Dataelement_92_1>
+                                <Dataelement_73_3 name="UICC version">7th edition</Dataelement_73_3>
+                                <Dataelement_58_2 name="Availability invasion front digital imaging">Can be generated
+                                </Dataelement_58_2>
+                                <Dataelement_71_1 name="Primary Tumor">Primary Tumor - T4a</Dataelement_71_1>
+                                <Dataelement_77_1 name="Regional lymph nodes">Regional lymph nodes - NX
+                                </Dataelement_77_1>
+                                <Dataelement_68_2 name="Localization of metastasis">
+                                    <Value>Localization of metastasis - Skin</Value>
+                                </Dataelement_68_2>
+                                <Dataelement_91_1 name="Morphology">Signet-ring cell carcinoma</Dataelement_91_1>
+                                <Dataelement_53_3 name="WHO version">3rd edition</Dataelement_53_3>
+                                <Dataelement_57_3 name="Availability digital imaging">Readily available
+                                </Dataelement_57_3>
+                                <Dataelement_82_1 name="Biological material from recurrence available">false
+                                </Dataelement_82_1>
+                            </Form2>
+                        </LogitudinalData>
+                    </Event>
+
+
+                    <Event name="01/05/2015" eventtype="Radiation therapy">
+                        <LogitudinalData>
+                            <Form5 name="form_29_ver-5">
+                                <Dataelement_12_4 name="Date of start of radiation therapy">1</Dataelement_12_4>
+                                <Dataelement_13_2 name="Date of end of radiation therapy">8</Dataelement_13_2>
+                            </Form5>
+                        </LogitudinalData>
+                    </Event>
+
+
+                    <Event name="30/05/2015" eventtype="Targeted Therapy">
+                        <LogitudinalData>
+                            <Form6 name="form_30_ver-3">
+                                <Dataelement_35_3 name="Date of start of targeted therapy">2</Dataelement_35_3>
+                                <Dataelement_36_1 name="Date of end of targeted therapy">5</Dataelement_36_1>
+                            </Form6>
+                        </LogitudinalData>
+                    </Event>
+
+
+                </Events>
+            </Location>
+        </Locations>
+    </BHPatient>
+</BHImport>

@@ -1,0 +1,325 @@
+{
+  "entry": [
+    {
+      "fullUrl": "http://example.com/Patient/DKFZ-I001",
+      "request": {
+        "method": "PUT",
+        "url": "Patient/DKFZ-I001"
+      },
+      "resource": {
+        "gender": "male",
+        "id": "DKFZ-I001",
+        "meta": {
+          "profile": [
+            "https://fhir.bbmri.de/StructureDefinition/Patient"
+          ]
+        },
+        "resourceType": "Patient"
+      }
+    },
+    {
+      "fullUrl": "http://example.com/Specimen/DKFZ-I001-specimen-SKJ2398",
+      "request": {
+        "method": "PUT",
+        "url": "Specimen/DKFZ-I001-specimen-SKJ2398"
+      },
+      "resource": {
+        "collection": {
+          "collectedDateTime": "2009-03-06"
+        },
+        "extension": [
+          {
+            "url": "https://fhir.bbmri.de/StructureDefinition/StorageTemperature",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "code": "temperature2to10",
+                  "system": "https://fhir.bbmri.de/CodeSystem/StorageTemperature"
+                }
+              ]
+            }
+          },
+          {
+            "url": "https://fhir.bbmri.de/StructureDefinition/SampleDiagnosis",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "code": "",
+                  "system": "http://hl7.org/fhir/sid/icd-10"
+                }
+              ]
+            }
+          },
+          {
+            "url": "https://fhir.bbmri.de/StructureDefinition/Custodian",
+            "valueReference": {
+              "reference": "Organization/collection-0"
+            }
+          }
+        ],
+        "id": "DKFZ-I001-specimen-SKJ2398",
+        "meta": {
+          "profile": [
+            "https://fhir.bbmri.de/StructureDefinition/Specimen"
+          ]
+        },
+        "resourceType": "Specimen",
+        "subject": {
+          "reference": "Patient/DKFZ-I001"
+        },
+        "type": {
+          "coding": [
+            {
+              "code": "tissue-formalin",
+              "system": "https://fhir.bbmri.de/CodeSystem/SampleMaterialType"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "http://example.com/Condition/DKFZ-I001-condition-0",
+      "request": {
+        "method": "PUT",
+        "url": "Condition/DKFZ-I001-condition-0"
+      },
+      "resource": {
+        "code": {
+          "coding": [
+            {
+              "code": "",
+              "system": "http://hl7.org/fhir/sid/icd-10",
+              "version": "2016"
+            }
+          ]
+        },
+        "id": "DKFZ-I001-condition-0",
+        "meta": {
+          "profile": [
+            "https://fhir.bbmri.de/StructureDefinition/Condition"
+          ]
+        },
+        "onsetDateTime": "2010-09-12",
+        "resourceType": "Condition",
+        "subject": {
+          "reference": "Patient/DKFZ-I001"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://example.com/Patient/DKFZ-I002",
+      "request": {
+        "method": "PUT",
+        "url": "Patient/DKFZ-I002"
+      },
+      "resource": {
+        "gender": "male",
+        "id": "DKFZ-I002",
+        "meta": {
+          "profile": [
+            "https://fhir.bbmri.de/StructureDefinition/Patient"
+          ]
+        },
+        "resourceType": "Patient"
+      }
+    },
+    {
+      "fullUrl": "http://example.com/Specimen/DKFZ-I002-specimen-AB23091",
+      "request": {
+        "method": "PUT",
+        "url": "Specimen/DKFZ-I002-specimen-AB23091"
+      },
+      "resource": {
+        "collection": {
+          "collectedDateTime": "2012-06-01"
+        },
+        "extension": [
+          {
+            "url": "https://fhir.bbmri.de/StructureDefinition/StorageTemperature",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "code": "temperature2to10",
+                  "system": "https://fhir.bbmri.de/CodeSystem/StorageTemperature"
+                }
+              ]
+            }
+          },
+          {
+            "url": "https://fhir.bbmri.de/StructureDefinition/SampleDiagnosis",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "code": "",
+                  "system": "http://hl7.org/fhir/sid/icd-10"
+                }
+              ]
+            }
+          },
+          {
+            "url": "https://fhir.bbmri.de/StructureDefinition/Custodian",
+            "valueReference": {
+              "reference": "Organization/collection-0"
+            }
+          }
+        ],
+        "id": "DKFZ-I002-specimen-AB23091",
+        "meta": {
+          "profile": [
+            "https://fhir.bbmri.de/StructureDefinition/Specimen"
+          ]
+        },
+        "resourceType": "Specimen",
+        "subject": {
+          "reference": "Patient/DKFZ-I002"
+        },
+        "type": {
+          "coding": [
+            {
+              "code": "tissue-formalin",
+              "system": "https://fhir.bbmri.de/CodeSystem/SampleMaterialType"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "http://example.com/Condition/DKFZ-I002-condition-0",
+      "request": {
+        "method": "PUT",
+        "url": "Condition/DKFZ-I002-condition-0"
+      },
+      "resource": {
+        "code": {
+          "coding": [
+            {
+              "code": "",
+              "system": "http://hl7.org/fhir/sid/icd-10",
+              "version": "2016"
+            }
+          ]
+        },
+        "id": "DKFZ-I002-condition-0",
+        "meta": {
+          "profile": [
+            "https://fhir.bbmri.de/StructureDefinition/Condition"
+          ]
+        },
+        "onsetDateTime": "2005-05-12",
+        "resourceType": "Condition",
+        "subject": {
+          "reference": "Patient/DKFZ-I002"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://example.com/Patient/DKFZ-I003",
+      "request": {
+        "method": "PUT",
+        "url": "Patient/DKFZ-I003"
+      },
+      "resource": {
+        "gender": "female",
+        "id": "DKFZ-I003",
+        "meta": {
+          "profile": [
+            "https://fhir.bbmri.de/StructureDefinition/Patient"
+          ]
+        },
+        "resourceType": "Patient"
+      }
+    },
+    {
+      "fullUrl": "http://example.com/Specimen/DKFZ-I003-specimen-aan2918",
+      "request": {
+        "method": "PUT",
+        "url": "Specimen/DKFZ-I003-specimen-aan2918"
+      },
+      "resource": {
+        "collection": {
+          "collectedDateTime": "2015-04-06"
+        },
+        "extension": [
+          {
+            "url": "https://fhir.bbmri.de/StructureDefinition/StorageTemperature",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "code": "temperature2to10",
+                  "system": "https://fhir.bbmri.de/CodeSystem/StorageTemperature"
+                }
+              ]
+            }
+          },
+          {
+            "url": "https://fhir.bbmri.de/StructureDefinition/SampleDiagnosis",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "code": "",
+                  "system": "http://hl7.org/fhir/sid/icd-10"
+                }
+              ]
+            }
+          },
+          {
+            "url": "https://fhir.bbmri.de/StructureDefinition/Custodian",
+            "valueReference": {
+              "reference": "Organization/collection-0"
+            }
+          }
+        ],
+        "id": "DKFZ-I003-specimen-aan2918",
+        "meta": {
+          "profile": [
+            "https://fhir.bbmri.de/StructureDefinition/Specimen"
+          ]
+        },
+        "resourceType": "Specimen",
+        "subject": {
+          "reference": "Patient/DKFZ-I003"
+        },
+        "type": {
+          "coding": [
+            {
+              "code": "tissue-formalin",
+              "system": "https://fhir.bbmri.de/CodeSystem/SampleMaterialType"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "http://example.com/Condition/DKFZ-I003-condition-0",
+      "request": {
+        "method": "PUT",
+        "url": "Condition/DKFZ-I003-condition-0"
+      },
+      "resource": {
+        "code": {
+          "coding": [
+            {
+              "code": "",
+              "system": "http://hl7.org/fhir/sid/icd-10",
+              "version": "2016"
+            }
+          ]
+        },
+        "id": "DKFZ-I003-condition-0",
+        "meta": {
+          "profile": [
+            "https://fhir.bbmri.de/StructureDefinition/Condition"
+          ]
+        },
+        "onsetDateTime": "2007-09-11",
+        "resourceType": "Condition",
+        "subject": {
+          "reference": "Patient/DKFZ-I003"
+        }
+      }
+    }
+  ],
+  "id": "fa695cbd-de61-4e55-ae8f-5d322af01d8c",
+  "resourceType": "Bundle",
+  "type": "transaction"
+}

@@ -21,7 +21,7 @@ import (
 	"time"
 )
 
-func BodyHeight(patientIdx int, date time.Time, value float64) Object {
+func BodyHeight(patientIdx string, date time.Time, value float64) Object {
 	return Object{
 		"resourceType":      "Observation",
 		"id":                fmt.Sprintf("bbmri-%d-body-height", patientIdx),

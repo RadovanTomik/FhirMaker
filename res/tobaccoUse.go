@@ -20,7 +20,7 @@ import (
 	"time"
 )
 
-func TobaccoUse(r *rand.Rand, patientIdx int, time time.Time) Object {
+func TobaccoUse(r *rand.Rand, patientIdx string, time time.Time) Object {
 	tobaccoUse := make(map[string]interface{})
 	tobaccoUse["resourceType"] = "Observation"
 	tobaccoUse["id"] = fmt.Sprintf("bbmri-%d-tobacco-use", patientIdx)

@@ -19,7 +19,7 @@ import (
 	"math/rand"
 )
 
-func CauseOfDeath(r *rand.Rand, patientIdx int) Object {
+func CauseOfDeath(r *rand.Rand, patientIdx string) Object {
 	return Object{
 		"resourceType":         "Observation",
 		"id":                   fmt.Sprintf("bbmri-%d-cause-of-death", patientIdx),

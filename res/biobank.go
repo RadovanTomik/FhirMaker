@@ -17,15 +17,15 @@ package res
 func Biobank() Object {
 	return Object{
 		"resourceType": "Organization",
-		"id":           "biobank-0",
+		"id":           "MMCI-0",
 		"meta":         meta("https://fhir.bbmri.de/StructureDefinition/Biobank"),
 		"extension": Array{
 			bbmriExtensionString(
 				"OrganizationDescription",
-				"The Zentrale Biobank neustadt collects samples from patients at the Klinikum Neustadt."),
+				"Masaryk Memorial Cancer Institute"),
 			bbmriExtensionString(
 				"JuridicalPerson",
-				"Klinikum Neustadt vertreten durch den Vorstand"),
+				"amdfsoignsd"),
 			bbmriExtensionCodeableConcept(
 				"QualityStandard",
 				codeableConcept(bbmriCoding("QualityStandard", "oecd-guidelines"))),
@@ -35,7 +35,7 @@ func Biobank() Object {
 		},
 		"identifier": Array{Object{
 			"system": "http://www.bbmri-eric.eu/",
-			"value":  "bbmri-eric:ID:de_12345",
+			"value":  "bbmri-eric:ID:CZ_MMCI",
 		}},
 		"name":  "Zentrale Biobank Neustadt",
 		"alias": Array{"ZBBN"},
@@ -46,8 +46,8 @@ func Biobank() Object {
 		"address": Array{Object{
 			"line":       Array{"Krankenhausstr. 12"},
 			"city":       "Neustadt",
-			"postalCode": "12345",
-			"country":    "DE",
+			"postalCode": "60200",
+			"country":    "CZ",
 		}},
 		"contact": Array{Object{
 			"purpose": Object{
@@ -88,10 +88,10 @@ func Biobank() Object {
 				"value":  "forschungsanfragen@biobank.klinikum-neustadt.de",
 			}},
 			"address": Object{
-				"line":       Array{"Gebäude 24a", "Krankenhausstr. 12"},
-				"city":       "Neustadt",
-				"postalCode": "12345",
-				"country":    "DE",
+				"line":       Array{"Brno"},
+				"city":       "Brno",
+				"postalCode": "60200",
+				"country":    "CZ",
 			},
 		}},
 	}

@@ -16,19 +16,15 @@ package res
 
 import (
 	"fmt"
-	"math/rand"
 )
 
-func Condition(patientIdx int, condition string) Object {
+func Condition(patientId int, condition string, number int) Object {
 	return Object{
 		"resourceType":  "Condition",
-		"id":            fmt.Sprintf("bbmri-%d-condition-%d", patientIdx, 0),
+		"id":            fmt.Sprintf("bbmri-%d-condition-%d", patientId, number),
 		"meta":          meta("https://fhir.bbmri.de/StructureDefinition/Condition"),
-		"subject":       patientReference(patientIdx),
+		"subject":       patientReference(patientId),
 		"code":          codeableConcept(codingWithVersion("http://hl7.org/fhir/sid/icd-10", "2016", condition)),
 	}
 }
 
-func randIcd10Code(r *rand.Rand) string {
-	return fmt.Sprintf("%s%02d.%d", string(65+r.Intn(26)), r.Intn(100), r.Intn(10))
-}

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<patient biobank="MOU" consent="true" id="999" month="--05" sex="male" xmlns="http://www.bbmri.cz/schemas/biobank/data" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="exportNIS.xsd" year="1999">
+  <LTS>
+    <genome number="162" sampleId="BBMd:2042:162:gD" year="2042">
+      <samplesNo>1</samplesNo>
+      <availableSamplesNo>1</availableSamplesNo>
+      <materialType>gD</materialType>
+      <takingDate/>
+      <retrieved>unknown</retrieved>
+    </genome>
+    <genome number="162" sampleId="BBMd:2042:162:PK" year="2042">
+      <samplesNo>1</samplesNo>
+      <availableSamplesNo>1</availableSamplesNo>
+      <materialType>PK</materialType>
+      <takingDate/>
+      <retrieved>unknown</retrieved>
+    </genome>
+    <serum number="89" sampleId="BBMs:2042:89:SD" year="2042">
+      <samplesNo>3</samplesNo>
+      <availableSamplesNo>3</availableSamplesNo>
+      <materialType>SD</materialType>
+      <takingDate>2042-03-01</takingDate>
+    </serum>
+    <tissue number="136" sampleId="BBM:2042:136:1" year="2042">
+      <samplesNo>3</samplesNo>
+      <availableSamplesNo>3</availableSamplesNo>
+      <materialType>1</materialType>
+      <pTNM>T1bN2M</pTNM>
+      <morphology>8380/32</morphology>
+      <diagnosis>C541</diagnosis>
+      <cutTime>2042-03-01T11:55:00</cutTime>
+      <freezeTime>2042-03-01T12:05:00</freezeTime>
+      <retrieved>operational</retrieved>
+    </tissue>
+    <tissue number="136" sampleId="BBM:2042:136:4" year="2042">
+      <samplesNo>3</samplesNo>
+      <availableSamplesNo>3</availableSamplesNo>
+      <materialType>4</materialType>
+      <pTNM>T1bN2M</pTNM>
+      <morphology>8380/32</morphology>
+      <diagnosis>C541</diagnosis>
+      <cutTime>2042-03-01T11:55:00</cutTime>
+      <freezeTime>2042-03-01T12:05:00</freezeTime>
+      <retrieved>operational</retrieved>
+    </tissue>
+    <tissue number="136" sampleId="BBM:2042:136:53" year="2042">
+      <samplesNo>1</samplesNo>
+      <availableSamplesNo>1</availableSamplesNo>
+      <materialType>53</materialType>
+      <pTNM>T1bN2M</pTNM>
+      <morphology>8380/32</morphology>
+      <diagnosis>C541</diagnosis>
+      <cutTime>2042-03-01T11:55:00</cutTime>
+      <freezeTime>2042-03-01T12:05:00</freezeTime>
+      <retrieved>operational</retrieved>
+    </tissue>
+    <tissue number="136" sampleId="BBM:2042:136:54" year="2042">
+      <samplesNo>1</samplesNo>
+      <availableSamplesNo>1</availableSamplesNo>
+      <materialType>54</materialType>
+      <pTNM>T1bN2M</pTNM>
+      <morphology>8380/32</morphology>
+      <diagnosis>C541</diagnosis>
+      <cutTime>2042-03-01T11:55:00</cutTime>
+      <freezeTime>2042-03-01T12:05:00</freezeTime>
+      <retrieved>operational</retrieved>
+    </tissue>
+  </LTS>
+  <STS>
+    <diagnosisMaterial number="20127" sampleId="&amp;:2042:20127" year="2042">
+      <materialType>S</materialType>
+      <diagnosis>C541</diagnosis>
+      <takingDate>2042-02-12T13:18:00</takingDate>
+      <retrieved>unknown</retrieved>
+    </diagnosisMaterial>
+  </STS>
+</patient>

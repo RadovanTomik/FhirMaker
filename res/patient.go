@@ -23,6 +23,7 @@ func Patient(mou PatientMOU) Object {
 	patient := make(map[string]interface{})
 	patient["resourceType"] = "Patient"
 	patient["id"] = fmt.Sprintf("bbmri-%d", mou.Id)
+	fmt.Println(mou.Id)
 	patient["meta"] = meta("https://fhir.bbmri.de/StructureDefinition/Patient")
 	patient["gender"] = mou.Sex
 	patient["birthDate"] = mou.BirthYear + "-" + strings.Trim(mou.BirthMonth, "-") + "-01"

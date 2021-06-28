@@ -1,10 +1,10 @@
 {
   "entry": [
     {
-      "fullUrl": "http://example.com/Organization/biobank-0",
+      "fullUrl": "http://example.com/Organization/MMCI-0",
       "request": {
         "method": "PUT",
-        "url": "Organization/biobank-0"
+        "url": "Organization/MMCI-0"
       },
       "resource": {
         "address": [
@@ -97,11 +97,11 @@
         "extension": [
           {
             "url": "https://fhir.bbmri.de/StructureDefinition/OrganizationDescription",
-            "valueString": "The Zentrale Biobank neustadt collects samples from patients at the Klinikum Neustadt."
+            "valueString": "IDK"
           },
           {
             "url": "https://fhir.bbmri.de/StructureDefinition/JuridicalPerson",
-            "valueString": "Klinikum Neustadt vertreten durch den Vorstand"
+            "valueString": "amdfsoignsd"
           },
           {
             "url": "https://fhir.bbmri.de/StructureDefinition/QualityStandard",
@@ -126,7 +126,7 @@
             }
           }
         ],
-        "id": "biobank-0",
+        "id": "MMCI-0",
         "identifier": [
           {
             "system": "http://www.bbmri-eric.eu/",
@@ -1109,7 +1109,7 @@
       }
     }
   ],
-  "id": "d7e1a3ee-9b8f-4346-980f-a9d65d7e2155",
+  "id": "bf9d155e-6c7d-4a3b-86b0-52d6a83116ea",
   "resourceType": "Bundle",
   "type": "transaction"
 }

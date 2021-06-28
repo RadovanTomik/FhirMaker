@@ -16,15 +16,15 @@ package res
 
 import "fmt"
 
-func Collection(idx int) Object {
+func Collection(name string) Object {
 	return Object{
 		"resourceType": "Organization",
-		"id":           fmt.Sprintf("collection-%d", idx),
+		"id":           fmt.Sprintf("collection-%s", name),
 		"meta":         meta("https://fhir.bbmri.de/StructureDefinition/Collection"),
 		"extension": Array{
 			bbmriExtensionString(
 				"OrganizationDescription",
-				"The Collection consists of blood from patients at the Klinikum Neustadt."),
+				"The Collection consists of blood from patients at the MMCI."),
 			bbmriExtensionCodeableConcept(
 				"CollectionType",
 				codeableConcept(bbmriCoding("CollectionType", "HOSPITAL"))),
@@ -37,12 +37,12 @@ func Collection(idx int) Object {
 		},
 		"identifier": Array{Object{
 			"system": "http://www.bbmri-eric.eu/",
-			"value":  fmt.Sprintf("bbmri-eric:ID:de_12345:collection:%d", idx),
+			"value":  fmt.Sprintf("bbmri-eric:ID:CZ_MMCI:collection:%s", name),
 		}},
 		"name":  "Venous and arterial blood from misc patients internal reserve",
 		"alias": Array{"VAMPIR"},
 		"partOf": Object{
-			"reference": "Organization/biobank-0",
+			"reference": "Organization/MMCI-0",
 		},
 		"contact": Array{Object{
 			"purpose": Object{

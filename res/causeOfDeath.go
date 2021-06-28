@@ -27,6 +27,6 @@ func CauseOfDeath(r *rand.Rand, patientIdx int) Object {
 		"status":               "final",
 		"code":                 codeableConcept(coding("http://loinc.org", "68343-3")),
 		"subject":              patientReference(patientIdx),
-		"valueCodeableConcept": codeableConcept(coding("http://hl7.org/fhir/sid/icd-10", randIcd10Code(r))),
+		"valueCodeableConcept": codeableConcept(coding("http://hl7.org/fhir/sid/icd-10", "LOL")), //TODO
 	}
 }

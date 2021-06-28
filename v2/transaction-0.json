@@ -1,0 +1,281 @@
+{
+  "entry": [
+    {
+      "fullUrl": "http://example.com/Patient/bbmri-69",
+      "request": {
+        "method": "DELETE",
+        "url": "Patient/bbmri-69"
+      },
+      "resource": {
+        "birthDate": "1999-05-01",
+        "gender": "male",
+        "id": "bbmri-69",
+        "meta": {
+          "profile": [
+            "https://fhir.bbmri.de/StructureDefinition/Patient"
+          ]
+        },
+        "resourceType": "Patient"
+      }
+    },
+    {
+      "fullUrl": "http://example.com/Condition/bbmri-69-condition-0",
+      "request": {
+        "method": "DELETE",
+        "url": "Condition/bbmri-69-condition-0"
+      },
+      "resource": {
+        "code": {
+          "coding": [
+            {
+              "code": "C541",
+              "system": "http://hl7.org/fhir/sid/icd-10",
+              "version": "2016"
+            }
+          ]
+        },
+        "id": "bbmri-69-condition-0",
+        "meta": {
+          "profile": [
+            "https://fhir.bbmri.de/StructureDefinition/Condition"
+          ]
+        },
+        "resourceType": "Condition",
+        "subject": {
+          "reference": "Patient/bbmri-69"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://example.com/Specimen/bbmri-69-specimen-0",
+      "request": {
+        "method": "DELETE",
+        "url": "Specimen/bbmri-69-specimen-0"
+      },
+      "resource": {
+        "extension": [
+          {
+            "url": "https://fhir.bbmri.de/StructureDefinition/StorageTemperature",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "code": "temperature2to10",
+                  "system": "https://fhir.bbmri.de/CodeSystem/StorageTemperature"
+                }
+              ]
+            }
+          },
+          {
+            "url": "https://fhir.bbmri.de/StructureDefinition/SampleDiagnosis",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "code": "C541",
+                  "system": "http://hl7.org/fhir/sid/icd-10"
+                }
+              ]
+            }
+          },
+          {
+            "url": "https://fhir.bbmri.de/StructureDefinition/Custodian",
+            "valueReference": {
+              "reference": "Organization/collection-8"
+            }
+          }
+        ],
+        "id": "bbmri-69-specimen-0",
+        "meta": {
+          "profile": [
+            "https://fhir.bbmri.de/StructureDefinition/Specimen"
+          ]
+        },
+        "resourceType": "Specimen",
+        "subject": {
+          "reference": "Patient/bbmri-69"
+        },
+        "type": {
+          "coding": [
+            {
+              "code": "tissue",
+              "system": "https://fhir.bbmri.de/CodeSystem/SampleMaterialType"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "http://example.com/Specimen/bbmri-69-specimen-1",
+      "request": {
+        "method": "DELETE",
+        "url": "Specimen/bbmri-69-specimen-1"
+      },
+      "resource": {
+        "extension": [
+          {
+            "url": "https://fhir.bbmri.de/StructureDefinition/StorageTemperature",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "code": "temperature2to10",
+                  "system": "https://fhir.bbmri.de/CodeSystem/StorageTemperature"
+                }
+              ]
+            }
+          },
+          {
+            "url": "https://fhir.bbmri.de/StructureDefinition/SampleDiagnosis",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "code": "C541",
+                  "system": "http://hl7.org/fhir/sid/icd-10"
+                }
+              ]
+            }
+          },
+          {
+            "url": "https://fhir.bbmri.de/StructureDefinition/Custodian",
+            "valueReference": {
+              "reference": "Organization/collection-8"
+            }
+          }
+        ],
+        "id": "bbmri-69-specimen-1",
+        "meta": {
+          "profile": [
+            "https://fhir.bbmri.de/StructureDefinition/Specimen"
+          ]
+        },
+        "resourceType": "Specimen",
+        "subject": {
+          "reference": "Patient/bbmri-69"
+        },
+        "type": {
+          "coding": [
+            {
+              "code": "tissue",
+              "system": "https://fhir.bbmri.de/CodeSystem/SampleMaterialType"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "http://example.com/Specimen/bbmri-69-specimen-2",
+      "request": {
+        "method": "DELETE",
+        "url": "Specimen/bbmri-69-specimen-2"
+      },
+      "resource": {
+        "extension": [
+          {
+            "url": "https://fhir.bbmri.de/StructureDefinition/StorageTemperature",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "code": "temperature2to10",
+                  "system": "https://fhir.bbmri.de/CodeSystem/StorageTemperature"
+                }
+              ]
+            }
+          },
+          {
+            "url": "https://fhir.bbmri.de/StructureDefinition/SampleDiagnosis",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "code": "C541",
+                  "system": "http://hl7.org/fhir/sid/icd-10"
+                }
+              ]
+            }
+          },
+          {
+            "url": "https://fhir.bbmri.de/StructureDefinition/Custodian",
+            "valueReference": {
+              "reference": "Organization/collection-8"
+            }
+          }
+        ],
+        "id": "bbmri-69-specimen-2",
+        "meta": {
+          "profile": [
+            "https://fhir.bbmri.de/StructureDefinition/Specimen"
+          ]
+        },
+        "resourceType": "Specimen",
+        "subject": {
+          "reference": "Patient/bbmri-69"
+        },
+        "type": {
+          "coding": [
+            {
+              "code": "tissue",
+              "system": "https://fhir.bbmri.de/CodeSystem/SampleMaterialType"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "http://example.com/Specimen/bbmri-69-specimen-3",
+      "request": {
+        "method": "DELETE",
+        "url": "Specimen/bbmri-69-specimen-3"
+      },
+      "resource": {
+        "extension": [
+          {
+            "url": "https://fhir.bbmri.de/StructureDefinition/StorageTemperature",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "code": "temperature2to10",
+                  "system": "https://fhir.bbmri.de/CodeSystem/StorageTemperature"
+                }
+              ]
+            }
+          },
+          {
+            "url": "https://fhir.bbmri.de/StructureDefinition/SampleDiagnosis",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "code": "C541",
+                  "system": "http://hl7.org/fhir/sid/icd-10"
+                }
+              ]
+            }
+          },
+          {
+            "url": "https://fhir.bbmri.de/StructureDefinition/Custodian",
+            "valueReference": {
+              "reference": "Organization/collection-8"
+            }
+          }
+        ],
+        "id": "bbmri-69-specimen-3",
+        "meta": {
+          "profile": [
+            "https://fhir.bbmri.de/StructureDefinition/Specimen"
+          ]
+        },
+        "resourceType": "Specimen",
+        "subject": {
+          "reference": "Patient/bbmri-69"
+        },
+        "type": {
+          "coding": [
+            {
+              "code": "tissue",
+              "system": "https://fhir.bbmri.de/CodeSystem/SampleMaterialType"
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "id": "f983b9bf-a1e3-4619-8dfd-b297ba6af07d",
+  "resourceType": "Bundle",
+  "type": "transaction"
+}

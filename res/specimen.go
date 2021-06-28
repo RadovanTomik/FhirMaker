@@ -17,23 +17,36 @@ package res
 import (
 	"fmt"
 	"math/rand"
+	"regexp"
 )
 
-func Specimen(mou PatientMOU, specimenIdx int,) Object {
+func Specimen(patientId int, diagnosis string, materialType string, collection string, number int) Object {
 	return Object{
 		"resourceType": "Specimen",
-		"id":           fmt.Sprintf("bbmri-%d-specimen-%d", mou.Id, specimenIdx),
+		"id":           fmt.Sprintf("bbmri-%d-specimen-%d", patientId, number),
 		"meta":         meta("https://fhir.bbmri.de/StructureDefinition/Specimen"),
-		"extension":    Array{storageTemp(), sampleDiagnosis(mou.STS.DMs[0].Diagnosis), custodian(mou.Custodian)},
-		"type":         codeableConcept(materialTypeCoding()),
-		"subject":      patientReference(mou.Id),
+		"extension":    Array{storageTemp(collection, materialType), sampleDiagnosis(diagnosis), custodian(collection)},
+		"type":         codeableConcept(materialTypeCoding(materialType)),
+		"subject":      patientReference(patientId),
 	}
 }
 
-func storageTemp() Object {
+func storageTemp(collection string, materialType string) Object {
+	number := 1 //STS
+	if collection == "LTS" { //tissue, serum
+		number = 4
+	}
+	if collection == "LTS" && materialType == "gD"{ // Genome
+		number = 2
+	}
+	res1, _ := regexp.MatchString("5.", materialType) //RNALATER
+	if res1 {
+		fmt.Println(materialType)
+		number = 1
+	}
 	coding := coding(
 		"https://fhir.bbmri.de/CodeSystem/StorageTemperature",
-		storageTemps[0])
+		storageTemps[number])
 
 	return bbmriExtensionCodeableConcept("StorageTemperature", codeableConcept(coding))
 }
@@ -61,23 +74,19 @@ func sampleDiagnosis(diagnosis string) Object {
 func custodian(custodian string) Object {
 	return bbmriExtensionReference(
 		"Custodian",
-		stringReference("Organization", fmt.Sprintf("collection-" + "8")))
+		stringReference("Organization", fmt.Sprintf("collection-" + custodian)))
 }
 
 
 var fastingStatus = []string{"F", "FNA", "NF", "NG"}
 
-func randFastingStatus(r *rand.Rand) string {
-	return fastingStatus[r.Intn(len(fastingStatus))]
-}
-
-func randIcdOCode(r *rand.Rand) string {
-	return fmt.Sprintf("C%02d.%d", r.Intn(100), r.Intn(10))
-}
-
-func materialTypeCoding() Object {
+func materialTypeCoding(materialType string) Object {
+	temp := "tissue-other"
+	if val, ok := materialTypes2[materialType]; ok {
+		temp = val
+	}
 	return coding("https://fhir.bbmri.de/CodeSystem/SampleMaterialType",
-		materialTypes[0])
+		temp)
 }
 
 var materialTypes = []string{
@@ -104,6 +113,33 @@ var materialTypes = []string{
 	"cf-dna",
 	"rna",
 	"derivative-other",
+}
+
+var materialTypes2 = map[string]string {
+	"1": "tissue-frozen",
+	"2": "tissue-frozen",
+	"3": "tissue-frozen",
+	"4": "tissue-frozen",
+	"5": "tissue-frozen",
+	"6": "tissue-frozen",
+	"7": "peripheral-blood-cells-vital",
+	"C": "blood-plasma",
+	"K": "blood-plasma",
+	"L": "liquid-other",
+	"PD": "liquid-other",
+	"S": "serum",
+	"T": "blood-plasma",
+	"53": "tissue-other",
+	"54": "tissue-other",
+	"55": "tissue-other",
+	"56": "tissue-other",
+	"gD": "dna",
+	"SD": "serum",
+	"A1": "tissue-other",
+
+
+
+	//TODO
 }
 
 func randMaterialType(r *rand.Rand) string {

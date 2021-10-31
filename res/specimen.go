@@ -66,7 +66,12 @@ func randStorageTemp(r *rand.Rand) string {
 }
 
 func sampleDiagnosis(diagnosis string) Object {
-	coding := coding("http://hl7.org/fhir/sid/icd-10", diagnosis)
+	locatorDiagnosis := diagnosis
+	if len(diagnosis) == 4 {
+		suffix := diagnosis[3:]
+		locatorDiagnosis = diagnosis[:3] + "." + suffix
+	}
+	coding := coding("http://hl7.org/fhir/sid/icd-10", locatorDiagnosis)
 
 	return bbmriExtensionCodeableConcept("SampleDiagnosis", codeableConcept(coding))
 }

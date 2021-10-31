@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"errors"
 	"fmt"
-	"github.com/samply/bbmri-fhir-gen/res"
+	"github.com/RadovanTomik/FhirMaker/res"
 	"github.com/spf13/cobra"
 	"os"
 	"path/filepath"

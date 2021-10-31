@@ -1,4 +1,4 @@
-module github.com/samply/bbmri-fhir-gen
+module github.com/RadovanTomik/FhirMaker
 
 go 1.13
 

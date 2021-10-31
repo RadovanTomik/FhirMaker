@@ -19,12 +19,17 @@ import (
 )
 
 func Condition(patientId int, condition string, number int) Object {
+	locatorDiagnosis := condition
+	if len(condition) == 4 {
+		suffix := condition[3:]
+		locatorDiagnosis = condition[:3] + "." + suffix
+	}
 	return Object{
 		"resourceType":  "Condition",
 		"id":            fmt.Sprintf("bbmri-%d-condition-%d", patientId, number),
 		"meta":          meta("https://fhir.bbmri.de/StructureDefinition/Condition"),
 		"subject":       patientReference(patientId),
-		"code":          codeableConcept(codingWithVersion("http://hl7.org/fhir/sid/icd-10", "2016", condition)),
+		"code":          codeableConcept(codingWithVersion("http://hl7.org/fhir/sid/icd-10", "2016", locatorDiagnosis)),
 	}
 }
 

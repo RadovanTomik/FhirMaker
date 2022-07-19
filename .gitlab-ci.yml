@@ -16,6 +16,7 @@ build-job:       # This job runs in the build stage, which runs first.
   stage: build
   script:
     - go get -d
+    - go get github.com/RadovanTomik/FhirMaker/...
     - go build
 
 unit-test-job:   # This job runs in the test stage.

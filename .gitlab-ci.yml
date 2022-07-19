@@ -1,4 +1,13 @@
+image: golang:1.9
 
+cache:
+  paths:
+    - /apt-cache
+    - /go/src/github.com
+    - /go/src/golang.org
+    - /go/src/google.golang.org
+    - /go/src/gopkg.in
+    
 stages:          # List of stages for jobs, and their order of execution
   - build
   - test

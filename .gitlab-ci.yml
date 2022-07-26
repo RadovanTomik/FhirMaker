@@ -1,26 +1,37 @@
-image: golang:1.14
-
-cache:
-  paths:
-    - /apt-cache
-    - /go/src/github.com
-    - /go/src/golang.org
-    - /go/src/google.golang.org
-    - /go/src/gopkg.in
-    
-stages:          # List of stages for jobs, and their order of execution
-  - build
+stages:
+  - pre_deploy          
   - test
-
-build-job:       # This job runs in the build stage, which runs first.
-  stage: build
+  - build
+  - deploy
+pre_deploy-job:
+  stage: pre_deploy
+  tags:
+    - BH-prod
   script:
-    - cp -r /builds/bbmri.cz/fhir_mapping/fhirmaker /go/src/FhirMaker
-    - go get -v -d ./...
-    - go build
-
-unit-test-job:   # This job runs in the test stage.
-  stage: test    # It only starts when the job in the build stage completes successfully.
+    - source ~/.profile
+    - go version
+test-job:
+  stage: test
+  tags:
+    - BH-prod
   script:
     - cd tests && go test
-
+build-job:       
+  stage: build
+  tags:
+    - BH-prod
+  script:
+    - go build
+    - ls
+deploy-job:
+  stage: deploy
+  tags:
+    - BH-prod
+  environment:
+    name: Test-Bridgehead
+  rules:
+    -
+      when: manual
+  script:
+    - go build
+    - cp ./FhirMaker ~/

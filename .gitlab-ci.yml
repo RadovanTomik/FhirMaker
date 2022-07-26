@@ -6,27 +6,27 @@ stages:
 pre_deploy-job:
   stage: pre_deploy
   tags:
-    - BH-prod
+    - BH-Prod
   script:
     - source ~/.profile
     - go version
 test-job:
   stage: test
   tags:
-    - BH-prod
+    - BH-Prod
   script:
     - cd tests && go test
 build-job:       
   stage: build
   tags:
-    - BH-prod
+    - BH-Prod
   script:
     - go build
     - ls
 deploy-job:
   stage: deploy
   tags:
-    - BH-prod
+    - BH-Prod
   environment:
     name: Test-Bridgehead
   rules:

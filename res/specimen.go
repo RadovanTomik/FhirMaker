@@ -82,7 +82,7 @@ func generateExtensions(sample map[string]interface{}) []Object {
 
 func sampleDiagnosis(sampleDiagnosis interface{}) Object {
 	diagnosis, ok := sampleDiagnosis.(string)
-	if !ok {
+	if !ok || diagnosis == "" {
 		return nil
 	}
 	locatorDiagnosis := diagnosis

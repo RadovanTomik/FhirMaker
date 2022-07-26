@@ -29,7 +29,7 @@
             <materialType>1</materialType>
             <pTNM>T1bN2M</pTNM>
             <morphology>8380/32</morphology>
-            <diagnosis>C541</diagnosis>
+            <diagnosis/>
             <cutTime>2042-03-01T11:55:00</cutTime>
             <freezeTime>2042-03-01T12:05:00</freezeTime>
             <retrieved>operational</retrieved>

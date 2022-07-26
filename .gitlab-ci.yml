@@ -8,7 +8,7 @@ pre_deploy-job:
   tags:
     - BH-Prod
   script:
-    - source ~/.profile
+    - whoami
     - go version
 test-job:
   stage: test

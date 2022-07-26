@@ -16,22 +16,26 @@ package res
 
 import (
 	"fmt"
-	"math/rand"
 	"regexp"
 )
 
-func Specimen(patientId int, diagnosis string, materialType string, collection string, number int) Object {
+func Specimen(sample map[string]interface{}) Object {
+
 	return Object{
 		"resourceType": "Specimen",
-		"id":           fmt.Sprintf("bbmri-%d-specimen-%d", patientId, number),
+		"id":           fmt.Sprintf("bbmri-%s-specimen-%d", sample["patientId"].(string), sample["sampleIndex"]),
 		"meta":         meta("https://fhir.bbmri.de/StructureDefinition/Specimen"),
-		"extension":    Array{storageTemp(collection, materialType), sampleDiagnosis(diagnosis), custodian(collection)},
-		"type":         codeableConcept(materialTypeCoding(materialType)),
-		"subject":      patientReference(patientId),
+		"extension":    generateExtensions(sample),
+		"type":         codeableConcept(materialTypeCoding(sample["materialType"])),
+		"subject":      patientReference(sample["patientId"].(string)),
 	}
 }
 
-func storageTemp(collection string, materialType string) Object {
+func storageTemp(collection string, materialType interface{}) Object {
+	temp, ok := materialType.(string)
+	if !ok {
+		return nil
+	}
 	number := 1              //STS
 	if collection == "LTS" { //tissue, serum
 		number = 4
@@ -39,9 +43,11 @@ func storageTemp(collection string, materialType string) Object {
 	if collection == "LTS" && materialType == "gD" { // Genome
 		number = 2
 	}
-	res1, _ := regexp.MatchString("5.", materialType) //RNALATER
+	res1, err := regexp.MatchString("5.", temp) //RNALATER
+	if err != nil {
+		return nil
+	}
 	if res1 {
-		fmt.Println(materialType)
 		number = 1
 	}
 	coding := coding(
@@ -61,11 +67,24 @@ var storageTemps = []string{
 	"temperatureOther",
 }
 
-func randStorageTemp(r *rand.Rand) string {
-	return storageTemps[r.Intn(len(storageTemps))]
+func generateExtensions(sample map[string]interface{}) []Object {
+	extensions := []Object{custodian(sample["collection"].(string))}
+	temp := storageTemp(sample["collection"].(string), sample["materialType"])
+	if temp != nil {
+		extensions = append(extensions, temp)
+	}
+	temp = sampleDiagnosis(sample["diagnosis"])
+	if temp != nil {
+		extensions = append(extensions, temp)
+	}
+	return extensions
 }
 
-func sampleDiagnosis(diagnosis string) Object {
+func sampleDiagnosis(sampleDiagnosis interface{}) Object {
+	diagnosis, ok := sampleDiagnosis.(string)
+	if !ok {
+		return nil
+	}
 	locatorDiagnosis := diagnosis
 	if len(diagnosis) == 4 {
 		suffix := diagnosis[3:]
@@ -79,44 +98,23 @@ func sampleDiagnosis(diagnosis string) Object {
 func custodian(custodian string) Object {
 	return bbmriExtensionReference(
 		"Custodian",
-		stringReference("Organization", fmt.Sprintf("collection-"+custodian)))
+		Object{"identifier": Object{
+			"system": "https://bbmri-eric.eu",
+			"value":  fmt.Sprintf("bbmri-eric:ID:CZ_MMCI:collection:%s", custodian),
+		}})
 }
 
-var fastingStatus = []string{"F", "FNA", "NF", "NG"}
-
-func materialTypeCoding(materialType string) Object {
-	temp := "tissue-other"
-	if val, ok := materialTypes2[materialType]; ok {
+func materialTypeCoding(materialType interface{}) Object {
+	// TODO nasty
+	temp, ok := materialType.(string)
+	if !ok {
+		temp = "tissue-other"
+	}
+	if val, ok := materialTypes2[temp]; ok {
 		temp = val
 	}
 	return coding("https://fhir.bbmri.de/CodeSystem/SampleMaterialType",
 		temp)
-}
-
-var materialTypes = []string{
-	"tissue",
-	"tissue-formalin",
-	"tissue-frozen",
-	"tissue-paxgene-or-else",
-	"tissue-other",
-	"liquid",
-	"whole-blood",
-	"blood-plasma",
-	"blood-serum",
-	"peripheral-blood-cells-vital",
-	"buffy-coat",
-	"bone-marrow",
-	"csf-liquor",
-	"ascites",
-	"urine",
-	"saliva",
-	"stool-faeces",
-	"liquid-other",
-	"derivative",
-	"dna",
-	"cf-dna",
-	"rna",
-	"derivative-other",
 }
 
 var materialTypes2 = map[string]string{
@@ -140,10 +138,4 @@ var materialTypes2 = map[string]string{
 	"gD": "dna",
 	"SD": "serum",
 	"A1": "tissue-other",
-
-	//TODO
-}
-
-func randMaterialType(r *rand.Rand) string {
-	return materialTypes[r.Intn(len(materialTypes))]
 }

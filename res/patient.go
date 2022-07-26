@@ -15,7 +15,6 @@
 package res
 
 import (
-	"fmt"
 	"github.com/clbanning/mxj/v2"
 	"strings"
 )
@@ -25,7 +24,6 @@ func Patient(patientXML *mxj.Map) Object {
 	var err error
 	patient["resourceType"] = "Patient"
 	patient["id"], err = patientXML.ValueForPath("patient.-id")
-	fmt.Println(patient["id"])
 	patient["meta"] = meta("https://fhir.bbmri.de/StructureDefinition/Patient")
 	patient["gender"], err = patientXML.ValueForPath("patient.-sex")
 	year, err := patientXML.ValueForPath("patient.-year")

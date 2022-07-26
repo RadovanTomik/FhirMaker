@@ -91,7 +91,7 @@ func transformFiles(inputDir string, outputDir string) error {
 				counter++
 				fhirResources = append(fhirResources, xmlToFhir(patientMou)...)
 			}
-			if counter == 100 {
+			if counter%100 == 0 {
 				err := encodeToFile(outputDir, fmt.Sprintf("transaction-%d.json", transactionCounter), res.Bundle(fhirResources))
 				if err != nil {
 					return err

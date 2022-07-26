@@ -9,6 +9,7 @@ import (
 	"github.com/spf13/cobra"
 	"os"
 	"path/filepath"
+	"time"
 )
 
 var rootCmd = &cobra.Command{
@@ -77,16 +78,17 @@ func transformFiles(inputDir string, outputDir string) error {
 	counter := 0
 	transactionCounter := 0
 	var fhirResources []res.Object
+	start := time.Now()
 	err := filepath.Walk(inputDir, func(path string, info os.FileInfo, err error) error {
 		if err != nil {
 			fmt.Println(err)
 			return err
 		}
 		if path != inputDir {
-			counter++
 			fmt.Printf("File: %s\n", path)
 			patientMou := res.ReadFile(path)
 			if patientMou != nil {
+				counter++
 				fhirResources = append(fhirResources, xmlToFhir(patientMou)...)
 			}
 			if counter == 100 {
@@ -108,11 +110,13 @@ func transformFiles(inputDir string, outputDir string) error {
 	if err != nil {
 		return err
 	}
+	elapsed := time.Since(start)
+	fmt.Printf("Successfully transformed %d patient files in %s.", counter, elapsed)
 	return nil
 }
 
 func xmlToFhir(patientMOU mxj.Map) []res.Object {
-	return []res.Object{res.Patient(&patientMOU)}
+	return append([]res.Object{res.Patient(&patientMOU)}, res.GetFHIRSpecimen(&patientMOU)...)
 }
 
 // encodeToFile encodes the JSON object `o` to the file with `filename` in `dir`

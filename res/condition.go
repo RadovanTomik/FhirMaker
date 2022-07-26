@@ -18,7 +18,7 @@ import (
 	"fmt"
 )
 
-func Condition(patientId int, condition string, number int) Object {
+func Condition(patientId string, condition string, number int) Object {
 	locatorDiagnosis := condition
 	if len(condition) == 4 {
 		suffix := condition[3:]

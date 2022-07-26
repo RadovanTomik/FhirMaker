@@ -1,0 +1,982 @@
+{
+  "entry": [
+    {
+      "fullUrl": "https://bbmri.cz/Patient/999",
+      "request": {
+        "method": "PUT",
+        "url": "Patient/999"
+      },
+      "resource": {
+        "birthDate": "1999-05-01",
+        "gender": "male",
+        "id": "999",
+        "meta": {
+          "profile": [
+            "https://fhir.bbmri.de/StructureDefinition/Patient"
+          ]
+        },
+        "resourceType": "Patient"
+      }
+    },
+    {
+      "fullUrl": "https://bbmri.cz/Specimen/bbmri-999-specimen-0",
+      "request": {
+        "method": "PUT",
+        "url": "Specimen/bbmri-999-specimen-0"
+      },
+      "resource": {
+        "extension": [
+          {
+            "url": "https://fhir.bbmri.de/StructureDefinition/Custodian",
+            "valueReference": {
+              "identifier": {
+                "system": "https://bbmri-eric.eu",
+                "value": "bbmri-eric:ID:CZ_MMCI:collection:LTS"
+              }
+            }
+          },
+          {
+            "url": "https://fhir.bbmri.de/StructureDefinition/StorageTemperature",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "code": "temperature-60to-85",
+                  "system": "https://fhir.bbmri.de/CodeSystem/StorageTemperature"
+                }
+              ]
+            }
+          }
+        ],
+        "id": "bbmri-999-specimen-0",
+        "meta": {
+          "profile": [
+            "https://fhir.bbmri.de/StructureDefinition/Specimen"
+          ]
+        },
+        "resourceType": "Specimen",
+        "subject": {
+          "reference": "Patient/999"
+        },
+        "type": {
+          "coding": [
+            {
+              "code": "dna",
+              "system": "https://fhir.bbmri.de/CodeSystem/SampleMaterialType"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "https://bbmri.cz/Specimen/bbmri-999-specimen-1",
+      "request": {
+        "method": "PUT",
+        "url": "Specimen/bbmri-999-specimen-1"
+      },
+      "resource": {
+        "extension": [
+          {
+            "url": "https://fhir.bbmri.de/StructureDefinition/Custodian",
+            "valueReference": {
+              "identifier": {
+                "system": "https://bbmri-eric.eu",
+                "value": "bbmri-eric:ID:CZ_MMCI:collection:LTS"
+              }
+            }
+          },
+          {
+            "url": "https://fhir.bbmri.de/StructureDefinition/StorageTemperature",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "code": "temperatureLN",
+                  "system": "https://fhir.bbmri.de/CodeSystem/StorageTemperature"
+                }
+              ]
+            }
+          }
+        ],
+        "id": "bbmri-999-specimen-1",
+        "meta": {
+          "profile": [
+            "https://fhir.bbmri.de/StructureDefinition/Specimen"
+          ]
+        },
+        "resourceType": "Specimen",
+        "subject": {
+          "reference": "Patient/999"
+        },
+        "type": {
+          "coding": [
+            {
+              "code": "PK",
+              "system": "https://fhir.bbmri.de/CodeSystem/SampleMaterialType"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "https://bbmri.cz/Specimen/bbmri-999-specimen-2",
+      "request": {
+        "method": "PUT",
+        "url": "Specimen/bbmri-999-specimen-2"
+      },
+      "resource": {
+        "extension": [
+          {
+            "url": "https://fhir.bbmri.de/StructureDefinition/Custodian",
+            "valueReference": {
+              "identifier": {
+                "system": "https://bbmri-eric.eu",
+                "value": "bbmri-eric:ID:CZ_MMCI:collection:LTS"
+              }
+            }
+          },
+          {
+            "url": "https://fhir.bbmri.de/StructureDefinition/StorageTemperature",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "code": "temperatureLN",
+                  "system": "https://fhir.bbmri.de/CodeSystem/StorageTemperature"
+                }
+              ]
+            }
+          }
+        ],
+        "id": "bbmri-999-specimen-2",
+        "meta": {
+          "profile": [
+            "https://fhir.bbmri.de/StructureDefinition/Specimen"
+          ]
+        },
+        "resourceType": "Specimen",
+        "subject": {
+          "reference": "Patient/999"
+        },
+        "type": {
+          "coding": [
+            {
+              "code": "serum",
+              "system": "https://fhir.bbmri.de/CodeSystem/SampleMaterialType"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "https://bbmri.cz/Specimen/bbmri-999-specimen-3",
+      "request": {
+        "method": "PUT",
+        "url": "Specimen/bbmri-999-specimen-3"
+      },
+      "resource": {
+        "extension": [
+          {
+            "url": "https://fhir.bbmri.de/StructureDefinition/Custodian",
+            "valueReference": {
+              "identifier": {
+                "system": "https://bbmri-eric.eu",
+                "value": "bbmri-eric:ID:CZ_MMCI:collection:LTS"
+              }
+            }
+          },
+          {
+            "url": "https://fhir.bbmri.de/StructureDefinition/StorageTemperature",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "code": "temperatureLN",
+                  "system": "https://fhir.bbmri.de/CodeSystem/StorageTemperature"
+                }
+              ]
+            }
+          },
+          {
+            "url": "https://fhir.bbmri.de/StructureDefinition/SampleDiagnosis",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "code": "C54.1",
+                  "system": "http://hl7.org/fhir/sid/icd-10"
+                }
+              ]
+            }
+          }
+        ],
+        "id": "bbmri-999-specimen-3",
+        "meta": {
+          "profile": [
+            "https://fhir.bbmri.de/StructureDefinition/Specimen"
+          ]
+        },
+        "resourceType": "Specimen",
+        "subject": {
+          "reference": "Patient/999"
+        },
+        "type": {
+          "coding": [
+            {
+              "code": "tissue-frozen",
+              "system": "https://fhir.bbmri.de/CodeSystem/SampleMaterialType"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "https://bbmri.cz/Specimen/bbmri-999-specimen-4",
+      "request": {
+        "method": "PUT",
+        "url": "Specimen/bbmri-999-specimen-4"
+      },
+      "resource": {
+        "extension": [
+          {
+            "url": "https://fhir.bbmri.de/StructureDefinition/Custodian",
+            "valueReference": {
+              "identifier": {
+                "system": "https://bbmri-eric.eu",
+                "value": "bbmri-eric:ID:CZ_MMCI:collection:LTS"
+              }
+            }
+          },
+          {
+            "url": "https://fhir.bbmri.de/StructureDefinition/StorageTemperature",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "code": "temperatureLN",
+                  "system": "https://fhir.bbmri.de/CodeSystem/StorageTemperature"
+                }
+              ]
+            }
+          },
+          {
+            "url": "https://fhir.bbmri.de/StructureDefinition/SampleDiagnosis",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "code": "C54.1",
+                  "system": "http://hl7.org/fhir/sid/icd-10"
+                }
+              ]
+            }
+          }
+        ],
+        "id": "bbmri-999-specimen-4",
+        "meta": {
+          "profile": [
+            "https://fhir.bbmri.de/StructureDefinition/Specimen"
+          ]
+        },
+        "resourceType": "Specimen",
+        "subject": {
+          "reference": "Patient/999"
+        },
+        "type": {
+          "coding": [
+            {
+              "code": "tissue-frozen",
+              "system": "https://fhir.bbmri.de/CodeSystem/SampleMaterialType"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "https://bbmri.cz/Specimen/bbmri-999-specimen-5",
+      "request": {
+        "method": "PUT",
+        "url": "Specimen/bbmri-999-specimen-5"
+      },
+      "resource": {
+        "extension": [
+          {
+            "url": "https://fhir.bbmri.de/StructureDefinition/Custodian",
+            "valueReference": {
+              "identifier": {
+                "system": "https://bbmri-eric.eu",
+                "value": "bbmri-eric:ID:CZ_MMCI:collection:LTS"
+              }
+            }
+          },
+          {
+            "url": "https://fhir.bbmri.de/StructureDefinition/StorageTemperature",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "code": "temperature-18to-35",
+                  "system": "https://fhir.bbmri.de/CodeSystem/StorageTemperature"
+                }
+              ]
+            }
+          },
+          {
+            "url": "https://fhir.bbmri.de/StructureDefinition/SampleDiagnosis",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "code": "C54.1",
+                  "system": "http://hl7.org/fhir/sid/icd-10"
+                }
+              ]
+            }
+          }
+        ],
+        "id": "bbmri-999-specimen-5",
+        "meta": {
+          "profile": [
+            "https://fhir.bbmri.de/StructureDefinition/Specimen"
+          ]
+        },
+        "resourceType": "Specimen",
+        "subject": {
+          "reference": "Patient/999"
+        },
+        "type": {
+          "coding": [
+            {
+              "code": "tissue-other",
+              "system": "https://fhir.bbmri.de/CodeSystem/SampleMaterialType"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "https://bbmri.cz/Specimen/bbmri-999-specimen-6",
+      "request": {
+        "method": "PUT",
+        "url": "Specimen/bbmri-999-specimen-6"
+      },
+      "resource": {
+        "extension": [
+          {
+            "url": "https://fhir.bbmri.de/StructureDefinition/Custodian",
+            "valueReference": {
+              "identifier": {
+                "system": "https://bbmri-eric.eu",
+                "value": "bbmri-eric:ID:CZ_MMCI:collection:LTS"
+              }
+            }
+          },
+          {
+            "url": "https://fhir.bbmri.de/StructureDefinition/StorageTemperature",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "code": "temperature-18to-35",
+                  "system": "https://fhir.bbmri.de/CodeSystem/StorageTemperature"
+                }
+              ]
+            }
+          },
+          {
+            "url": "https://fhir.bbmri.de/StructureDefinition/SampleDiagnosis",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "code": "C54.1",
+                  "system": "http://hl7.org/fhir/sid/icd-10"
+                }
+              ]
+            }
+          }
+        ],
+        "id": "bbmri-999-specimen-6",
+        "meta": {
+          "profile": [
+            "https://fhir.bbmri.de/StructureDefinition/Specimen"
+          ]
+        },
+        "resourceType": "Specimen",
+        "subject": {
+          "reference": "Patient/999"
+        },
+        "type": {
+          "coding": [
+            {
+              "code": "tissue-other",
+              "system": "https://fhir.bbmri.de/CodeSystem/SampleMaterialType"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "https://bbmri.cz/Specimen/bbmri-999-specimen-7",
+      "request": {
+        "method": "PUT",
+        "url": "Specimen/bbmri-999-specimen-7"
+      },
+      "resource": {
+        "extension": [
+          {
+            "url": "https://fhir.bbmri.de/StructureDefinition/Custodian",
+            "valueReference": {
+              "identifier": {
+                "system": "https://bbmri-eric.eu",
+                "value": "bbmri-eric:ID:CZ_MMCI:collection:STS"
+              }
+            }
+          },
+          {
+            "url": "https://fhir.bbmri.de/StructureDefinition/StorageTemperature",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "code": "temperature-18to-35",
+                  "system": "https://fhir.bbmri.de/CodeSystem/StorageTemperature"
+                }
+              ]
+            }
+          },
+          {
+            "url": "https://fhir.bbmri.de/StructureDefinition/SampleDiagnosis",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "code": "C54.1",
+                  "system": "http://hl7.org/fhir/sid/icd-10"
+                }
+              ]
+            }
+          }
+        ],
+        "id": "bbmri-999-specimen-7",
+        "meta": {
+          "profile": [
+            "https://fhir.bbmri.de/StructureDefinition/Specimen"
+          ]
+        },
+        "resourceType": "Specimen",
+        "subject": {
+          "reference": "Patient/999"
+        },
+        "type": {
+          "coding": [
+            {
+              "code": "serum",
+              "system": "https://fhir.bbmri.de/CodeSystem/SampleMaterialType"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "https://bbmri.cz/Patient/222",
+      "request": {
+        "method": "PUT",
+        "url": "Patient/222"
+      },
+      "resource": {
+        "birthDate": "1999-05-01",
+        "gender": "male",
+        "id": "222",
+        "meta": {
+          "profile": [
+            "https://fhir.bbmri.de/StructureDefinition/Patient"
+          ]
+        },
+        "resourceType": "Patient"
+      }
+    },
+    {
+      "fullUrl": "https://bbmri.cz/Specimen/bbmri-222-specimen-0",
+      "request": {
+        "method": "PUT",
+        "url": "Specimen/bbmri-222-specimen-0"
+      },
+      "resource": {
+        "extension": [
+          {
+            "url": "https://fhir.bbmri.de/StructureDefinition/Custodian",
+            "valueReference": {
+              "identifier": {
+                "system": "https://bbmri-eric.eu",
+                "value": "bbmri-eric:ID:CZ_MMCI:collection:STS"
+              }
+            }
+          },
+          {
+            "url": "https://fhir.bbmri.de/StructureDefinition/StorageTemperature",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "code": "temperature-18to-35",
+                  "system": "https://fhir.bbmri.de/CodeSystem/StorageTemperature"
+                }
+              ]
+            }
+          },
+          {
+            "url": "https://fhir.bbmri.de/StructureDefinition/SampleDiagnosis",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "code": "C54.1",
+                  "system": "http://hl7.org/fhir/sid/icd-10"
+                }
+              ]
+            }
+          }
+        ],
+        "id": "bbmri-222-specimen-0",
+        "meta": {
+          "profile": [
+            "https://fhir.bbmri.de/StructureDefinition/Specimen"
+          ]
+        },
+        "resourceType": "Specimen",
+        "subject": {
+          "reference": "Patient/222"
+        },
+        "type": {
+          "coding": [
+            {
+              "code": "serum",
+              "system": "https://fhir.bbmri.de/CodeSystem/SampleMaterialType"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "https://bbmri.cz/Patient/333",
+      "request": {
+        "method": "PUT",
+        "url": "Patient/333"
+      },
+      "resource": {
+        "birthDate": "1999-05-01",
+        "gender": "male",
+        "id": "333",
+        "meta": {
+          "profile": [
+            "https://fhir.bbmri.de/StructureDefinition/Patient"
+          ]
+        },
+        "resourceType": "Patient"
+      }
+    },
+    {
+      "fullUrl": "https://bbmri.cz/Specimen/bbmri-333-specimen-0",
+      "request": {
+        "method": "PUT",
+        "url": "Specimen/bbmri-333-specimen-0"
+      },
+      "resource": {
+        "extension": [
+          {
+            "url": "https://fhir.bbmri.de/StructureDefinition/Custodian",
+            "valueReference": {
+              "identifier": {
+                "system": "https://bbmri-eric.eu",
+                "value": "bbmri-eric:ID:CZ_MMCI:collection:LTS"
+              }
+            }
+          }
+        ],
+        "id": "bbmri-333-specimen-0",
+        "meta": {
+          "profile": [
+            "https://fhir.bbmri.de/StructureDefinition/Specimen"
+          ]
+        },
+        "resourceType": "Specimen",
+        "subject": {
+          "reference": "Patient/333"
+        },
+        "type": {
+          "coding": [
+            {
+              "code": "tissue-other",
+              "system": "https://fhir.bbmri.de/CodeSystem/SampleMaterialType"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "https://bbmri.cz/Specimen/bbmri-333-specimen-1",
+      "request": {
+        "method": "PUT",
+        "url": "Specimen/bbmri-333-specimen-1"
+      },
+      "resource": {
+        "extension": [
+          {
+            "url": "https://fhir.bbmri.de/StructureDefinition/Custodian",
+            "valueReference": {
+              "identifier": {
+                "system": "https://bbmri-eric.eu",
+                "value": "bbmri-eric:ID:CZ_MMCI:collection:LTS"
+              }
+            }
+          },
+          {
+            "url": "https://fhir.bbmri.de/StructureDefinition/StorageTemperature",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "code": "temperatureLN",
+                  "system": "https://fhir.bbmri.de/CodeSystem/StorageTemperature"
+                }
+              ]
+            }
+          }
+        ],
+        "id": "bbmri-333-specimen-1",
+        "meta": {
+          "profile": [
+            "https://fhir.bbmri.de/StructureDefinition/Specimen"
+          ]
+        },
+        "resourceType": "Specimen",
+        "subject": {
+          "reference": "Patient/333"
+        },
+        "type": {
+          "coding": [
+            {
+              "code": "PK",
+              "system": "https://fhir.bbmri.de/CodeSystem/SampleMaterialType"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "https://bbmri.cz/Specimen/bbmri-333-specimen-2",
+      "request": {
+        "method": "PUT",
+        "url": "Specimen/bbmri-333-specimen-2"
+      },
+      "resource": {
+        "extension": [
+          {
+            "url": "https://fhir.bbmri.de/StructureDefinition/Custodian",
+            "valueReference": {
+              "identifier": {
+                "system": "https://bbmri-eric.eu",
+                "value": "bbmri-eric:ID:CZ_MMCI:collection:LTS"
+              }
+            }
+          },
+          {
+            "url": "https://fhir.bbmri.de/StructureDefinition/StorageTemperature",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "code": "temperatureLN",
+                  "system": "https://fhir.bbmri.de/CodeSystem/StorageTemperature"
+                }
+              ]
+            }
+          }
+        ],
+        "id": "bbmri-333-specimen-2",
+        "meta": {
+          "profile": [
+            "https://fhir.bbmri.de/StructureDefinition/Specimen"
+          ]
+        },
+        "resourceType": "Specimen",
+        "subject": {
+          "reference": "Patient/333"
+        },
+        "type": {
+          "coding": [
+            {
+              "code": "serum",
+              "system": "https://fhir.bbmri.de/CodeSystem/SampleMaterialType"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "https://bbmri.cz/Specimen/bbmri-333-specimen-3",
+      "request": {
+        "method": "PUT",
+        "url": "Specimen/bbmri-333-specimen-3"
+      },
+      "resource": {
+        "extension": [
+          {
+            "url": "https://fhir.bbmri.de/StructureDefinition/Custodian",
+            "valueReference": {
+              "identifier": {
+                "system": "https://bbmri-eric.eu",
+                "value": "bbmri-eric:ID:CZ_MMCI:collection:LTS"
+              }
+            }
+          },
+          {
+            "url": "https://fhir.bbmri.de/StructureDefinition/StorageTemperature",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "code": "temperatureLN",
+                  "system": "https://fhir.bbmri.de/CodeSystem/StorageTemperature"
+                }
+              ]
+            }
+          }
+        ],
+        "id": "bbmri-333-specimen-3",
+        "meta": {
+          "profile": [
+            "https://fhir.bbmri.de/StructureDefinition/Specimen"
+          ]
+        },
+        "resourceType": "Specimen",
+        "subject": {
+          "reference": "Patient/333"
+        },
+        "type": {
+          "coding": [
+            {
+              "code": "tissue-frozen",
+              "system": "https://fhir.bbmri.de/CodeSystem/SampleMaterialType"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "https://bbmri.cz/Specimen/bbmri-333-specimen-4",
+      "request": {
+        "method": "PUT",
+        "url": "Specimen/bbmri-333-specimen-4"
+      },
+      "resource": {
+        "extension": [
+          {
+            "url": "https://fhir.bbmri.de/StructureDefinition/Custodian",
+            "valueReference": {
+              "identifier": {
+                "system": "https://bbmri-eric.eu",
+                "value": "bbmri-eric:ID:CZ_MMCI:collection:LTS"
+              }
+            }
+          },
+          {
+            "url": "https://fhir.bbmri.de/StructureDefinition/StorageTemperature",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "code": "temperatureLN",
+                  "system": "https://fhir.bbmri.de/CodeSystem/StorageTemperature"
+                }
+              ]
+            }
+          },
+          {
+            "url": "https://fhir.bbmri.de/StructureDefinition/SampleDiagnosis",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "code": "C54.1",
+                  "system": "http://hl7.org/fhir/sid/icd-10"
+                }
+              ]
+            }
+          }
+        ],
+        "id": "bbmri-333-specimen-4",
+        "meta": {
+          "profile": [
+            "https://fhir.bbmri.de/StructureDefinition/Specimen"
+          ]
+        },
+        "resourceType": "Specimen",
+        "subject": {
+          "reference": "Patient/333"
+        },
+        "type": {
+          "coding": [
+            {
+              "code": "tissue-frozen",
+              "system": "https://fhir.bbmri.de/CodeSystem/SampleMaterialType"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "https://bbmri.cz/Specimen/bbmri-333-specimen-5",
+      "request": {
+        "method": "PUT",
+        "url": "Specimen/bbmri-333-specimen-5"
+      },
+      "resource": {
+        "extension": [
+          {
+            "url": "https://fhir.bbmri.de/StructureDefinition/Custodian",
+            "valueReference": {
+              "identifier": {
+                "system": "https://bbmri-eric.eu",
+                "value": "bbmri-eric:ID:CZ_MMCI:collection:LTS"
+              }
+            }
+          },
+          {
+            "url": "https://fhir.bbmri.de/StructureDefinition/StorageTemperature",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "code": "temperature-18to-35",
+                  "system": "https://fhir.bbmri.de/CodeSystem/StorageTemperature"
+                }
+              ]
+            }
+          },
+          {
+            "url": "https://fhir.bbmri.de/StructureDefinition/SampleDiagnosis",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "code": "C54.1",
+                  "system": "http://hl7.org/fhir/sid/icd-10"
+                }
+              ]
+            }
+          }
+        ],
+        "id": "bbmri-333-specimen-5",
+        "meta": {
+          "profile": [
+            "https://fhir.bbmri.de/StructureDefinition/Specimen"
+          ]
+        },
+        "resourceType": "Specimen",
+        "subject": {
+          "reference": "Patient/333"
+        },
+        "type": {
+          "coding": [
+            {
+              "code": "tissue-other",
+              "system": "https://fhir.bbmri.de/CodeSystem/SampleMaterialType"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "https://bbmri.cz/Specimen/bbmri-333-specimen-6",
+      "request": {
+        "method": "PUT",
+        "url": "Specimen/bbmri-333-specimen-6"
+      },
+      "resource": {
+        "extension": [
+          {
+            "url": "https://fhir.bbmri.de/StructureDefinition/Custodian",
+            "valueReference": {
+              "identifier": {
+                "system": "https://bbmri-eric.eu",
+                "value": "bbmri-eric:ID:CZ_MMCI:collection:LTS"
+              }
+            }
+          },
+          {
+            "url": "https://fhir.bbmri.de/StructureDefinition/StorageTemperature",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "code": "temperature-18to-35",
+                  "system": "https://fhir.bbmri.de/CodeSystem/StorageTemperature"
+                }
+              ]
+            }
+          },
+          {
+            "url": "https://fhir.bbmri.de/StructureDefinition/SampleDiagnosis",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "code": "C54.1",
+                  "system": "http://hl7.org/fhir/sid/icd-10"
+                }
+              ]
+            }
+          }
+        ],
+        "id": "bbmri-333-specimen-6",
+        "meta": {
+          "profile": [
+            "https://fhir.bbmri.de/StructureDefinition/Specimen"
+          ]
+        },
+        "resourceType": "Specimen",
+        "subject": {
+          "reference": "Patient/333"
+        },
+        "type": {
+          "coding": [
+            {
+              "code": "tissue-other",
+              "system": "https://fhir.bbmri.de/CodeSystem/SampleMaterialType"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "https://bbmri.cz/Specimen/bbmri-333-specimen-7",
+      "request": {
+        "method": "PUT",
+        "url": "Specimen/bbmri-333-specimen-7"
+      },
+      "resource": {
+        "extension": [
+          {
+            "url": "https://fhir.bbmri.de/StructureDefinition/Custodian",
+            "valueReference": {
+              "identifier": {
+                "system": "https://bbmri-eric.eu",
+                "value": "bbmri-eric:ID:CZ_MMCI:collection:STS"
+              }
+            }
+          },
+          {
+            "url": "https://fhir.bbmri.de/StructureDefinition/SampleDiagnosis",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "code": "C54.1",
+                  "system": "http://hl7.org/fhir/sid/icd-10"
+                }
+              ]
+            }
+          }
+        ],
+        "id": "bbmri-333-specimen-7",
+        "meta": {
+          "profile": [
+            "https://fhir.bbmri.de/StructureDefinition/Specimen"
+          ]
+        },
+        "resourceType": "Specimen",
+        "subject": {
+          "reference": "Patient/333"
+        },
+        "type": {
+          "coding": [
+            {
+              "code": "tissue-other",
+              "system": "https://fhir.bbmri.de/CodeSystem/SampleMaterialType"
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "id": "3abc6645-f955-4cf4-a962-54c80d1ad563",
+  "resourceType": "Bundle",
+  "type": "transaction"
+}

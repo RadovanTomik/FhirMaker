@@ -22,10 +22,6 @@ type Object map[string]interface{}
 // Array is like a JSON array
 type Array []interface{}
 
-var (
-	vitalSigns = codeableConcept(coding("http://terminology.hl7.org/CodeSystem/observation-category", "vital-signs"))
-)
-
 func coding(system string, code string) Object {
 	return Object{"system": system, "code": code}
 }
@@ -42,12 +38,8 @@ func codeableConcept(coding Object) Object {
 	return Object{"coding": Array{coding}}
 }
 
-func quantity(value float64, unit string) Object {
-	return Object{"value": value, "unit": unit, "system": "http://unitsofmeasure.org", "code": unit}
-}
-
-func patientReference(idx int) Object {
-	return Object{"reference": fmt.Sprintf("Patient/bbmri-%d", idx)}
+func patientReference(idx string) Object {
+	return Object{"reference": fmt.Sprintf("Patient/%s", idx)}
 }
 
 func stringReference(resourceType string, id string) Object {

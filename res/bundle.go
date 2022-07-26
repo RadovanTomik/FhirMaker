@@ -47,7 +47,7 @@ func Bundle(objects []Object) Object {
 
 func entry(resource Object) Object {
 	return Object{
-		"fullUrl":  fmt.Sprintf("http://example.com/%s/%s", resource["resourceType"], resource["id"]),
+		"fullUrl":  fmt.Sprintf("https://bbmri.cz/%s/%s", resource["resourceType"], resource["id"]),
 		"resource": resource,
 		"request": Object{
 			"method": "PUT",

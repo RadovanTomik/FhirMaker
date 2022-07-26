@@ -9,6 +9,7 @@ pre_deploy-job:
     - BH-Prod
   script:
     - whoami
+    - export PATH=$PATH:/usr/local/go/bin >> .profile
     - go version
 test-job:
   stage: test
